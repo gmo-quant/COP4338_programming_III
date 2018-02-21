@@ -1,10 +1,10 @@
 /* ===========================================================
 |  
 | 	 date: 2018-01-23 19:18:47
-| Source code: assignment1.c 
+| Source code: FaherenheitAndCelsiusConvertionTable.c 
 |      Author: Guangzhuan Mo
 | Student ID : 5920187
-| Assignment : Program#  1  assignment1
+| Assignment : Program#  1  FaherenheitAndCelsiusConvertionTable
 |      Course: COP 4338 (Advanced Programming) 
 |    Section : U01 
 |  Instructor: William Feild 
@@ -16,23 +16,32 @@
 |
 |    Language: C
 | Compile/Run:
-|	gcc assignment1.c -o filename
+|	gcc FaherenheitAndCelsiusConvertionTable.c -o FaherenheitAndCelsiusConvertionTable
+| to run:
+|	chmod a+x FaherenheitAndCelsiusConvertionTable
+|	./FaherenheitAndCelsiusConvertionTable
 |
 | +---------------------------------------------------------------
 |
 | Description:
 |
 | 	Input: 
-|		user input: 5
-|		integer temperature step in the range [1-9]
+|		user input: 
+|
+|			integer temperature step in the range [1-9]
+| 	ex. 
+| 		5
 |
 |      Output:
 |
-|		Faherenheit & Celsius conversion table
+|			Faherenheit & Celsius conversion table
 |	ex.
 |		Fahrenheit	Celsius		Celsius		Fahrenheit
 |		-80.0		-62.2		-80.0		-112.0
 |		-75.0		-59.4		-75.0		-103.0
+|		....
+|		280.0		...			...			...
+|
 |     Process:
 |	the program's steps are as follows:
 |
@@ -68,28 +77,29 @@
 |	the program operates correctly
 |
  * ===========================================================*/
-#include<stdio.h>
-#include<stdlib.h>
-#include<ctype.h>
-#include<string.h>
+#include<stdio.h>	// to use printf();, scanf should include file stdio.h
+#include<stdlib.h>	// to use fflush();, 
+#include<ctype.h> 	// to use atoi();
+#include<string.h>	// to use atoi();
 
-#define True 1
-#define False 0
+#define TRUE 1
+#define FALSE 0
 #define FROMDEGREE -20.0
 #define TODEGREE 280.0
-#define NSIZE 2 // to simplify the validation, as step range from 1 to 9, it is 1 palce, 
+#define SECTION_MEMRS 8 // determine how many lines of conversion in a section
+#define NSIZE 1 // to simplify the validation, as step range from 1 to 9, it is 1 palce, 
 				// if it is from 1 to 99, then change it to 2
-#define MAX 99 // the max step
+#define MAX 9 // the max step
 
-int getStep();
-int rangeValidate(char* step);
-float Faherenheit2Celsius(float F);
-float Celsius2Faherenheit(float C);
-void blankLine();
+int getStep();		// get the step from the user input
+int rangeValidate(char* step); 	//validate if the step fall into the range of [ 1 to MAX], here MAX = 9
+float Faherenheit2Celsius(float F); // convert faherenheit degree to Celsius degree
+float Celsius2Faherenheit(float C); // convert celsius degree to faherenheit degree
+void blankLine(); // print  a blank line 
 
 int main(){
 	
-	int step = 1;
+	int step = 1; 
 	step = getStep();
 	
 	// print table head
@@ -97,19 +107,20 @@ int main(){
 	blankLine();	
 
 	int count = 0;
-	float c = 0; // store converted Celsuis
-	float f = 0; // store converted Faherenheit
+	float celsius = 0; // store converted Celsuis degree
+	float faherenheit = 0; // store converted Faherenheit degree
 	float degree = FROMDEGREE;
-	for (degree = FROMDEGREE; degree < TODEGREE; degree += step){
-		c = Faherenheit2Celsius(degree);
-		f = Celsius2Faherenheit(degree);
-		printf("%15.1f %15.1f %15.1f %15.1f \n", degree, c, degree, f);
+	for (degree = FROMDEGREE; degree <= TODEGREE; degree += step){
+		celsius = Faherenheit2Celsius(degree);
+		faherenheit = Celsius2Faherenheit(degree);
+		printf("%15.1f %15.1f %15.1f %15.1f \n", degree, celsius, degree, faherenheit);
 		count++;
-		if (count % 8 == 0){
+		if (count % SECTION_MEMRS == 0){ // if printed SECTION_MEMRS lines of record, print a blank line to 
+										// separate as a section.
 			blankLine();
 		}
 	}
-	
+	return 0;
 }
 
 
@@ -127,8 +138,9 @@ int main(){
  *---------------------------------------------------------------*/
 void blankLine(){
 	int i = 0;
-	for (i=0; i< 7; i++){
-		printf("__________");
+	int count = 7; // amount of blank line units.
+	for (i=0; i< count; i++){
+		printf("__________"); // print a blank line unit
 	}
 	printf("\n\n");
 }
@@ -150,7 +162,7 @@ void blankLine(){
  *---------------------------------------------------------------*/
 int getStep(){
 	char step[NSIZE];
-	int flag = False;
+	int flag = FALSE;
 	do{
 		printf("Please input a step range, from 1 to %d: \n", MAX);
 		
@@ -158,10 +170,10 @@ int getStep(){
 		scanf("%s", step);
 		fflush(stdin);
 		flag = rangeValidate(step);
-		if (True == flag){
+		if (TRUE == flag){
 			return atoi(step);
 		}
-	}while(True);
+	}while(!flag);
 
 }
 
@@ -177,26 +189,31 @@ int getStep(){
  * 	user input as step
  *
  * @return 
- *	True if it is valid input, 
- *	else False
+ *	TRUE if it is valid input, 
+ *	else FALSE
  *---------------------------------------------------------------*/
 int rangeValidate(char* step){
 
-	int digit = False;
+	int digit = FALSE; // assume input is not a digit
 	int i = 0;
+	
 	for ( i = 0; i < NSIZE; i++){
 		digit = isdigit(step[i]);
 		if (!digit){
-			break;
+			 // whenever encount a non-digit, it is a invalid input, 
+			printf("\nInput should be integer between 1 and %d \n", MAX);
+			return FALSE;
 		}
 	}
-	if( strlen(step) != NSIZE || !digit ){
+	
+	// step will be a digit, if execution comes here
+	if( strlen(step) != NSIZE ){
 		printf("\nInput should be integer between 1 and %d \n", MAX);
-		return False;
-	}else if ( atoi(step)> 0){ 
-		return True;
+		return FALSE;
+	}else if ( atoi(step)> 0){ // it is valid input
+		return TRUE;
 	}else{
-		return False;
+		return FALSE;
 	}
 }
 
@@ -206,19 +223,18 @@ int rangeValidate(char* step){
  *
  *    Purpose: 
  *		
- *	convert a Fahertenheit temperture to a Celsius Temperture
+ *		convert a Fahertenheit temperture to a Celsius Temperture
  *
  * 	using formula :
- * 		C = (F-32) * 5.0/9.0
- * @param 
+ * 		celsius = (faherenheit-32) * 5.0/9.0
+ * @param faherenheit degree
  *
- * @return 
+ * @return celsius degree converted from faherenheit degree
  *
  *---------------------------------------------------------------*/
-float Faherenheit2Celsius(float F){
-	float c = -1;
-	c = (F-32) * 5.0 / 9.0;
-	return c;
+float Faherenheit2Celsius(float faherenheit){
+	float celsius = (faherenheit-32) * 5.0 / 9.0;
+	return celsius;
 }
 
 /*--------------------------Celsius2Fahreheit(float C)------------------------------
@@ -226,16 +242,16 @@ float Faherenheit2Celsius(float F){
  *
  *    Purpose: 
  *
- * 	convert a Celsius to a Fahrenheit
+ * 		convert a Celsius degree to a Fahrenheit degree
  *
  * 	using formula
- * @param 
+ *		faherenheit = celsius * 9.0/ 5.0 + 32.0;
+ * @param celsius degree
  *
- * @return 
+ * @return faherenheit degree converted from celsius degree
  *
  *---------------------------------------------------------------*/
-float Celsius2Faherenheit(float C){
-	float f = 0;
-	f = C * 9.0 / 5.0 + 32.0;
-	return f;
+float Celsius2Faherenheit(float celsius){
+	float faherenheit = celsius * 9.0 / 5.0 + 32.0;
+	return faherenheit;
 }

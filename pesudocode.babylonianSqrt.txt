@@ -1,0 +1,33 @@
+**pesudo code for main:
+
+start from the START, which is 1 here
+check if the current number is a perfect number
+	if if it a perfect number, 
+		print the perfect number in the format of 
+		" perfect number = factor1 + factor2 + ...."
+ 		print the expected sqrt of the perfect number
+ 		print the calculated sqrt using babylonian method	
+
+** pesudo code for isPerfectNumber(int i)
+key: if number i is exactly divisible by j, j belongs to [1, i], 
+	then j is a factor of num
+	but for deciding if i is a perfect number, i is not included
+	therefore, j belongs to [1, i-1]
+
+	after getting one factor, addup to the current sum
+
+        decide if the sum == i, 
+	if yes, return True
+	else return False
+
+** pesudo code for babylonianSqrt(int i)
+
+set initial guess to 2;
+set difference to the required accuracy
+
+while is not yet reach the accuracy
+	set tmp to be the result of dividing the perfect number by the guess root
+	get next guess root by setting it to the average of the current guess root and tmp
+	get the difference between square guess root and the perfect number for the use of
+		deciding the accuracy
+	increments the counter for how many times it guess the square root.
