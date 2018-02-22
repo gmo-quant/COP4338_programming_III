@@ -1,6 +1,6 @@
-// #include"Card.h"
-#include"Card.h"
+#include"Deck.h"
+
 
 void main(){
-	CardTester();
+	DeckTester();
 }

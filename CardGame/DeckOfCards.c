@@ -29,7 +29,7 @@
 |	deal hands of cards.
 |	
 |	operations:
-|		* create a deck of cards
+|		* create a deck of cards 
 |		* display the original deck,
 |		* shuffle the deck
 |		* display the shuffled deck

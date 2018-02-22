@@ -5,10 +5,10 @@
 #define HEART	32
 #define SPADE	48
 
-#define DIAMOND_SYMBOL	"Diamond"
-#define	CLUB_SYMBOL		"Club"
-#define HEART_SYMBOL	"Heart"
-#define SPADE_SYMBOL	"Spade"
+#define DIAMOND_SYMBOL	"D"
+#define	CLUB_SYMBOL		"C"
+#define HEART_SYMBOL	"H"
+#define SPADE_SYMBOL	"S"
 
 
 #define SUIT_T 	4
@@ -24,8 +24,7 @@
 #define SUITMASK	48
 #define RANKMASK	15
 #define CARDMASK	63
-
-#define SYMBL_INIT 	0	
+	
 #define SYMBL_STEP	16
 #define BLANK_CARD 	0
 

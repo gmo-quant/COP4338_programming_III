@@ -1,6 +1,6 @@
 CC = gcc
 STD = -std=c99
-FILES = Card.c  MainHand.c
+FILES = Card.c  Deck.c MainHand.c
 OUT_EXE = MainHand
 
 build: $(FILES)
