@@ -1,0 +1,17 @@
+design
+-------------
+* create a Card class in c
+* create a Deck class in c
+* create a Game class in c
+
+outline of detail steps
+------------
+* create a deck of cards 
+* display the original deck,
+* shuffle the deck
+* display the shuffled deck
+* deal(from the top of the deck) the 
+  specified number of cards to the 
+  specified number of players
+  as per the command-line
+* display each of the hands of cards.
