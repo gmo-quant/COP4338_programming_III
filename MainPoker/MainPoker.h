@@ -97,6 +97,17 @@ void displayHands(Hand* playerArray, int players, int type);
 void displayHand(Hand hand);
 void displayRanked(Hand hand);
 
+#define DEALT	0
+#define SORTED	1
+#define RANKED 	2
+#define WINNER	3
+#define TEST 	4
+
+void dealt(Hand hand);
+void sorted(Hand hand);
+void ranked(Hand hand);
+void winner(Hand hand);
+void test(Hand hand);
 
 boolean straightFlush(Hand hand);
 boolean fourOfAKind(Hand hand);
@@ -110,19 +121,38 @@ boolean highCard(Hand hand);
 
 
 void ranker(Hand* playerArray, int playerAmt);
-char *  rankJudge(Hand hand);
+int  rankJudge(Hand hand);
 
+int winnerJudge(Hand* playerArray, int playerAmt);
+
+#define STRAIGHT_FLUSH	"Straight Flush"
+#define FOUR_KIND	"Four of a Kind"
+#define FULL_HOUSE	"Full House"
+#define FLUSH 		"Flush"
+#define	STRAIGHT 	"Straight"
+#define THREE_kIND	"Three of a Kind"
+#define	TWO_PAIR	"Two Pair"
+#define	ONE_PAIR	"One  Pair"
+#define	HIGH_CARD	"High Card"
+
+#define IDX_STRAIGHT_FLUSH	0
+#define IDX_FOUR_KIND	1
+#define IDX_FULL_HOUSE	2
+#define IDX_FLUSH 		3
+#define	IDX_STRAIGHT 	4
+#define IDX_THREE_kIND	5
+#define	IDX_TWO_PAIR	6
+#define	IDX_ONE_PAIR	7
+#define	IDX_HIGH_CARD	8
+
+
+#define WIN 1
+#define LOSS 0
+#define WINNER_MASK 1
 void PokerGameTester(const int argc, char* const argv[]);
 void PokerRankTester();
 
 
 
-#define DEALT	0
-#define SORTED	1
-#define RANKED 	2
-#define WINNER	3
 
-void dealt(Hand hand);
-void sorted(Hand hand);
-void 
 #endif

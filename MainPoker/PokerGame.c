@@ -2,6 +2,13 @@
 #include<stdio.h>
 #include<stdlib.h>	// to use atoi for convient to handle argv
 #include<string.h>
+
+static char*  rankJudgement[9] = 
+	{
+		STRAIGHT_FLUSH, FOUR_KIND, FULL_HOUSE, FLUSH, 
+		STRAIGHT, THREE_kIND, TWO_PAIR, ONE_PAIR, HIGH_CARD
+	};
+
 boolean validation(const int argc, char* const argv[]){
 
 	char* instruction = "\n \t please use the following  command:  \n\n\
@@ -122,9 +129,26 @@ void Gswap(Card* card1, Card * card2){
 	*card2 = tmp;
 }
 
+
+/*-------------------------dealer-------------------------------
+ *   function: dealer(TfDeck deck, unsigned * playerArray, 
+ * 						int players, int cardsPerHand)
+ *
+ *    Purpose: deal (from the top of the deck) 
+ * 				the specified number of cards 
+ *				to the specified number of players 
+ * 				(as per the command-line) 
+ *	
+ * @param  		the shuffled deck of card 
+ *				the player array that hold hand of cards for each player
+ *				amount of player, amount of cards per hand
+ *
+ * @return void
+ *
+ *---------------------------------------------------------------*/
 void displayHands(Hand* playerArray, int players, int type){
 
-	void (*display[])(Hand) = {dealt, sorted, ranked, winner};
+	void (*display[])(Hand) = {dealt, sorted, ranked, winner, test};
 	char * pormpt[] = {
 		"(dealt from top/front of deck)",
 		"sorted",
@@ -134,14 +158,30 @@ void displayHands(Hand* playerArray, int players, int type){
 	};
 	int playerCounter= 0;
 	printf(YELLOW"%s%s\n"RESET, "Player Hands: " , pormpt[type]);
-	display[type];
-	// display hands of card for each player
 	for (playerCounter= 0; playerCounter< players; playerCounter++){
 		printf("Player %d] - ", playerCounter + 1);
-
-		displayHand( playerArray[playerCounter]);
+		display[type](playerArray[playerCounter]);
 		printf("\n");
 	}
+}
+
+void dealt(Hand hand){
+	displayHand(hand);
+	printf("\n");
+}
+
+void sorted(Hand hand){
+	dealt(hand);
+}
+void ranked(Hand hand){
+	displayHand(hand);
+	printf(YELLOW" - %10s"RESET, rankJudgement[rankJudge(hand)] );
+}
+void winner(Hand hand){
+	// winnerJudge()
+}
+void test(Hand hand){
+	ranked(hand);
 }
 
 void displayHand(Hand hand){
@@ -149,7 +189,6 @@ void displayHand(Hand hand){
 	for (cardIdx = 0; cardIdx < CARD_PER_HAND; cardIdx++){
 		displayCard(&hand[cardIdx]); 
 	}
-	printf("\n");
 }
 
 
@@ -266,7 +305,6 @@ boolean twoPair(Hand hand){
 		}
 		if(2 == sameRankCounter){
 			pairCounter++;
-			printf("%d\n", pairCounter );
 		}
 		sameRankCounter = 0;
 	}
@@ -306,33 +344,67 @@ void ranker(Hand* playerArray, int playerAmt){
 	}
 }
 
-char* rankJudge(Hand hand){
-	static char*  rankJudgement[9] = 
-		{
-			"straight flush", "four of a kind", "full house", "flush", 
-			"straight", "three of a kind", "two pair", "one  pair", "high card"
-		};
-
+int rankJudge(Hand hand){
 	if (straightFlush(hand)){
-		return rankJudgement[0];
+		return IDX_STRAIGHT_FLUSH;
 	}else if(fourOfAKind(hand)){
-		return rankJudgement[1];
+		return IDX_FOUR_KIND;
 	}else if(fullHouse(hand)){
-		return rankJudgement[2];
+		return IDX_FULL_HOUSE;
 	}else if (flush(hand)){
-		return rankJudgement[3];
+		return IDX_FLUSH;
 	}else if(straight(hand)){
-		return rankJudgement[4];
+		return IDX_STRAIGHT;
 	}else if(threeOfAKind(hand)){
-		return rankJudgement[5];
+		return IDX_THREE_kIND;
 	}else if (twoPair(hand)){
-		return rankJudgement[6];
+		return IDX_TWO_PAIR;
 	}else if(onePair(hand)){
-		return rankJudgement[7];
+		return IDX_ONE_PAIR;
 	}else{
-		return rankJudgement[8];
+		return IDX_HIGH_CARD;
 	}
 }
+
+int winnerJudge(Hand* playerArray, int playerAmt){
+	int highesrank = IDX_HIGH_CARD;
+	int winner = LOSS ;
+	printf("initial winner val : %d \n",  winner);
+	int t_rank = highesrank;
+	// figure out what is the higest rank
+	for (int playerCounter= 0; playerCounter< playerAmt; playerCounter++){
+		t_rank = rankJudge(playerArray[playerCounter]);
+		if ( t_rank < highesrank ){
+			highesrank = t_rank;
+		}
+	}
+	// figure which player(s) has the highest rank
+	for (int playerCounter= 0; playerCounter< playerAmt; playerCounter++){
+		t_rank = rankJudge(playerArray[playerCounter]);
+		if ( t_rank == highesrank ) {
+			winner ^= ( WINNER_MASK << ( playerCounter) ); 
+		}
+	}
+	return winner;
+}
+
+void displayWinner(Hand *playerArray, int playerAmt){
+	int winner = winnerJudge(playerArray, playerAmt);
+	printf("winner val: %d \n", winner );
+	int tag = winner;
+	int shfitCounter = 0;
+	for (int i = 0;  i < playerAmt; i++){
+		if  ( (tag = winner & ( WINNER_MASK << ( shfitCounter) ))){
+			ranked(playerArray[shfitCounter]);
+			printf(RED"%s\n"RESET," - winner");
+		}else{
+			ranked(playerArray[shfitCounter]);
+			printf("\n");
+		}
+		shfitCounter++;
+	}
+} 
+
 
 void PokerGameTester(const int argc, char* const argv[]){
 
@@ -356,9 +428,24 @@ void PokerGameTester(const int argc, char* const argv[]){
 	displayDeck("shuffled deck of card: \n", deck);
 
 	dealer(deck,  playerArray, amtPlayers );
-	displayHands( playerArray, amtPlayers, "Player Hands: (default from top/front of deck");
-	sortHandsByRank(playerArray, amtPlayers);
-	displayHands( playerArray, amtPlayers, "Player Hands: sorted");
+	displayHands(playerArray, amtPlayers, RANKED);
+	// printf("winner is %d\n",  winnerJudge(playerArray, amtPlayers) );
+
+	// int winner = winnerJudge(playerArray, amtPlayers);
+	// printf("winner val: %d \n", winner );
+	// int tag = winner;
+	// int shfitCounter = 0;
+	// for (int i = 0;  i < MAX_PLAYER_AMT; i++){
+	// 	if  ( (tag = winner & ( WINNER_MASK << ( shfitCounter) ))){
+	// 		printf("winner : %d \n", shfitCounter   + 1);
+	// 	}
+	// 	shfitCounter++;
+	// }
+
+	displayWinner(playerArray, amtPlayers );
+	// displayHands( playerArray, amtPlayers, "Player Hands: (default from top/front of deck");
+	// sortHandsByRank(playerArray, amtPlayers);
+	// displayHands( playerArray, amtPlayers, "Player Hands: sorted");
 }// PokerGameTester
 
 

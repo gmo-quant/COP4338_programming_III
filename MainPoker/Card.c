@@ -38,7 +38,9 @@ Card generateCard(unsigned suit, unsigned rank){
  *
  *---------------------------------------------------------------*/
 void displayCard(Card* const card){
-	printf("[%s - %s]",   card->rankSym, card->suitSym);
+	char str[12];
+	sprintf(str, "[%s - %s]", card->rankSym, card->suitSym);
+	printf("%10s", str);
 }
 
 // for testing purpose only, when developing.
