@@ -1,17 +1,55 @@
-design
--------------
-* create a Card class in c
-* create a Deck class in c
-* create a Game class in c
+sudo code
 
-outline of detail steps
-------------
-* create a deck of cards 
-* display the original deck,
-* shuffle the deck
-* display the shuffled deck
-* deal(from the top of the deck) the 
-  specified number of cards to the 
-  specified number of players
-  as per the command-line
-* display each of the hands of cards.
+key :
+	use 6 bit the represent card in a struct of card, 
+	for the convenience of comparison
+	00   0000
+	suit rank
+	use a struct to represent a card.
+	use bitwise operation to handle the winner
+
+	simulate a deck of cards.
+	shuffled a deck of cards
+	deal hands of cards.
+	simulate a game of stud poker
+	operations:
+		* create a deck of cards 
+		* display the original deck,
+		* shuffle the deck
+		* display the shuffled deck
+		* deal(from the top of the deck) the 
+		  specified number of cards to the 
+		  specified number of players
+		  as per the command-line
+		* display each of the hands of cards.
+
+ 	a deck of cards has 52 card:
+ 		13 ranks
+		4 suits
+	
+ 	Input:
+		cmd input.
+ 		1st arg : # of cards per hand , will default to 5 cards per hand
+		2nd arg : # of hands(players), it should be in the range of [MIN_PLAYER_AMT,MAX_PLAYER_AMT]
+
+      Output:
+		* display the original deck(ordered) 
+		* display the shuffled deck()
+		* display each of the player's hands of cards.
+		* display each of the player's hands of cards, sorted
+		* display each of the player's hands of cards, ranked
+		* display each of the player's hands of cards, ranked, mark the winner
+		* display pre-set hands of cards, ranked
+		
+	the program's steps are as follows:
+		1. generate a deck of card 
+		2. display the deck of card generated
+		3. shuffle the deck of card
+		4. display the deck of card shuffled
+		5. deal(from the top of the deck) the 
+			specified number of cards to the 
+			specified number of players
+			as per the command-line
+		6. display each of the hands of cards.
+			dealt, sorted, ranked, mark with winner(s)
+ 

@@ -1,14 +1,27 @@
 #include "MainPoker.h"
-#include<stdio.h>
+#include<stdio.h> // used for printf("%s\n", );
 #include<stdlib.h>	// to use atoi for convient to handle argv
-#include<string.h>
+#include<string.h> // used for atoi() in validation()
 
-static char*  rankJudgement[9] = 
+// An array used for rankJudge() to determine 
+// the type of the hand
+static char*  rankJudgement[TYPE_OF_HANDS] = 
 	{
 		STRAIGHT_FLUSH, FOUR_KIND, FULL_HOUSE, FLUSH, 
 		STRAIGHT, THREE_kIND, TWO_PAIR, ONE_PAIR, HIGH_CARD
 	};
 
+/*-------------------------validation-------------------------------
+ *   function: boolean validation(const int argc, char* const argv[])
+ *
+ *    Purpose: determine whether the cmd of the user is valide 
+ *				argc should be ARG_AMT
+ *				player should be in the range of [MIN_PLAYER_AMT, MAX_PLAYER_AMT]
+ * @param  argc, argv[]
+ *
+ * @return TRUE if valide, else FALSE
+ *
+ *---------------------------------------------------------------*/
 boolean validation(const int argc, char* const argv[]){
 
 	char* instruction = "\n \t please use the following  command:  \n\n\
@@ -20,32 +33,39 @@ boolean validation(const int argc, char* const argv[]){
 		./MainPoker 7 5 \n\n\
 	indicates 5  cards per hand, 5 players\n";
 
-	char* warning = RED"\n \
-	WARNING: \n\n\
-	number of players should be in the range of [1,7] \n"RESET;
+	char warning[BUFF_LEN] ; 
+	sprintf(warning, 
+		RED"\n \tWARNING: \n\n \tnumber of players should be in the range of [%d,%d] \n"RESET, 
+		MIN_PLAYER_AMT, MAX_PLAYER_AMT);
 
-	// check if the argument count is equal to ARG_AMT required.
+	// check if the argument count is equal to ARG_AMT as required.
 	if (argc != ARG_AMT){
 		printf("%s\n", instruction );
 		return FALSE;
 	}
 
 	const int amtPlayers = atoi(argv[ARG_PLAYERS]);
-
-	if ( TRUE == validPlayerAmt(amtPlayers) ){
+	if (validPlayerAmt(amtPlayers) ){
 		return TRUE;
 	}else{
-		//the player amount from the user
-		// is out of range
+		// warn the user that 
 		printf(" %s\n", warning);
 		return FALSE;
 	}
 }// validation
 
+
+
+/*-------------------------validPlayerAmt-------------------------------
+ *   function: boolean validPlayerAmt(const int playerAmt )
+ *    Purpose: determine whether the cmd of the user is valide 
+ *				playerAmt should be in the range of [MIN_PLAYER_AMT, MAX_PLAYER_AMT]
+ * @param  playerAmt
+ *
+ * @return TRUE if valide, else FALSE
+ *
+ *---------------------------------------------------------------*/
 boolean validPlayerAmt(const int playerAmt ){
-	// it is validate player amount 
-	// if it is in the range of [1,7]
-	// return true
 	if ( (playerAmt >= MIN_PLAYER_AMT) && (playerAmt <= MAX_PLAYER_AMT) ){
 		return TRUE;
 	}else{
@@ -53,6 +73,15 @@ boolean validPlayerAmt(const int playerAmt ){
 	}
 } //validatePlayer
 
+/*-------------------------validCardsPerHand-------------------------------
+ *   function: boolean validCardsPerHand(const int cardPerHand ){
+ *    Purpose: determine whether the cmd of the user is valide 
+ *				cardPerHand should be CARD_PER_HAND
+ * @param  const int cardPerHand
+ *
+ * @return TRUE if valide, else FALSE
+ *
+ *---------------------------------------------------------------*/
 boolean validCardsPerHand(const int cardPerHand ){
 	if ( CARD_PER_HAND != cardPerHand ){
 		return FALSE;
@@ -60,6 +89,28 @@ boolean validCardsPerHand(const int cardPerHand ){
 		return TRUE;
 	}
 }// validaeHandAmt
+
+
+/*-------------------------displaySymbolExplaination-------------------------------
+ *   function:  displaySymbolExplaination()
+ *
+ *    Purpose: display the explaination of the symbol of a card
+ *
+ * @param  none
+ *
+ * @return void
+ *
+ *---------------------------------------------------------------*/
+void displaySymbolExplaination(){
+	char * instruction = YELLOW"\
+	Instruction for the meaning of the Symbol for each suit\n\
+	\n\
+	D represent Diamond \n \
+	C represent Club \n \
+	H represent Heart \n \
+	S represent SPADE \n "RESET;
+	printf("\n%s\n", instruction);
+}
 
 
 /*-------------------------dealer-------------------------------
@@ -84,19 +135,8 @@ void dealer(TfDeck deck, Hand* playerArray, int players){
 	int playerCounter = 0;
 	int cardCounter = 0;
 
-
-
 	// the first card in the deck array starting from index 1;
 	int cardDealedCounter = 1; 
-	/*
-		deal (from the top of the deck) the cardsPerHand of cards 
-		to the "players" of players 
-		starting from the top of the deck, 
-		player by player
-		for example, 5 players to play
-		one card to 1st player, 2nd player ...5th player in order
-		then the second card, until cardsPerHand
-	*/
 
 	for (cardCounter= 0; cardCounter< CARD_PER_HAND; cardCounter++){
 		for (playerCounter= 0; playerCounter< players; playerCounter++){
@@ -106,13 +146,30 @@ void dealer(TfDeck deck, Hand* playerArray, int players){
 	}
 }
 
+/*-------------------------sortHandsByRank-------------------------------
+ *   function:void sortHandsByRank(Hand* playerArray, int amtPlayers)
+ *    Purpose: sort hand of each player in the game, 
+ * @param  Hand* playerArray, hand of each player in the game
+ * 			int amtPlayers, the amount of players in the game
+ *
+ * @return none
+ *
+ *---------------------------------------------------------------*/
 void sortHandsByRank(Hand* playerArray, int amtPlayers){
 	for(int i = 0; i < amtPlayers; i++){
 		sortHandByRank(playerArray[i]);
 	}
 }
 
-
+/*-------------------------sortHandByRank-------------------------------
+ *   function:void sortHandsByRank(Hand* playerArray, int amtPlayers)
+ *    Purpose: sort hand of each player in the game, 
+ * @param  Hand* playerArray, hand of each player in the game
+ * 			int amtPlayers, the amount of players in the game
+ *
+ * @return none
+ *
+ *---------------------------------------------------------------*/
 void sortHandByRank(Hand hand){
 	for (int i = 0; i < CARD_PER_HAND; i++ ){
 		for (int j = 0; j < CARD_PER_HAND; j++){
@@ -122,27 +179,31 @@ void sortHandByRank(Hand hand){
 		}
 	}
 }
-
+/*-------------------------Gswap-------------------------------
+ *   function:void Gswap(Card* card1, Card * card2)
+ *    Purpose: swap card1 and card2
+ * @param  card1, card2
+ * @return none
+ *
+ *---------------------------------------------------------------*/
 void Gswap(Card* card1, Card * card2){
 	Card tmp = *card1;
 	*card1 = *card2;
 	*card2 = tmp;
 }
 
-
-/*-------------------------dealer-------------------------------
- *   function: dealer(TfDeck deck, unsigned * playerArray, 
- * 						int players, int cardsPerHand)
+/*-------------------------displayHands-------------------------------
+ *   function: void displayHands(Hand* playerArray, int players, int type)
  *
- *    Purpose: deal (from the top of the deck) 
- * 				the specified number of cards 
- *				to the specified number of players 
- * 				(as per the command-line) 
+ *    Purpose: display hand of each player in the game, depending on the type
+ * 				it can display 
+ * 					the hand just dealt
+ *					the hand sorted by rank of each card
+ * 					the hand ranked by the type of hand  
  *	
- * @param  		the shuffled deck of card 
- *				the player array that hold hand of cards for each player
- *				amount of player, amount of cards per hand
- *
+ * @param  		playerArray, 
+ *				players,
+ *				type, display type: DEALT, SORTED,RANKED
  * @return void
  *
  *---------------------------------------------------------------*/
@@ -164,22 +225,71 @@ void displayHands(Hand* playerArray, int players, int type){
 		printf("\n");
 	}
 }
+/*-------------------------displayHand-------------------------------
+ *   function: void displayHand(Hand hand)
+ *
+ *    Purpose: display the hand of a player 
+ * @param  		Hand hand
+ * @return void
+ *
+ *---------------------------------------------------------------*/
+void displayHand(Hand hand){
+	int cardIdx = 0;
+	for (cardIdx = 0; cardIdx < CARD_PER_HAND; cardIdx++){
+		displayCard(&hand[cardIdx]); 
+	}
+}
 
+/*-------------------------dealt-------------------------------
+ *   function: void dealt(Hand hand)
+ *
+ *    Purpose: display the hand of a player 
+ * @param  		Hand hand
+ * @return void
+ *
+ *---------------------------------------------------------------*/
 void dealt(Hand hand){
 	displayHand(hand);
 	printf("\n");
 }
-
+/*-------------------------sorted-------------------------------
+ *   function: void sorted(Hand hand)
+ *
+ *    Purpose: display the sorted hand of a player 
+ * @param  		Hand hand
+ * @return void
+ *
+ *---------------------------------------------------------------*/
 void sorted(Hand hand){
 	dealt(hand);
 }
+/*-------------------------ranked-------------------------------
+ *   function: void ranked(Hand hand)
+ *
+ *    Purpose: display the sorted hand of a player 
+ * @param  		Hand hand
+ * @return void
+ *
+ *---------------------------------------------------------------*/
 void ranked(Hand hand){
 	displayHand(hand);
 	printf(YELLOW" - %-15s"RESET, rankJudgement[rankJudge(hand)] );
 }
+// empty function, use displayWinner instead
 void winner(Hand hand){
 	// winnerJudge()
 }
+
+
+/*-------------------------test-------------------------------
+ *   function: void test(Hand handfake)
+ *
+ *    Purpose: Display each of the pre-set hands 
+ * 			   and the results of the tests
+ * @param  		Hand handfake , it is not used here
+ * @return void
+ *
+ *---------------------------------------------------------------*/
 void test(Hand handfake){
 	printf(YELLOW"%s%s\n"RESET, "Player Hands: " , "TEST");
 
@@ -275,185 +385,43 @@ void test(Hand handfake){
 	ranked(hand);
 	printf("\n");
 }
-
-void displayHand(Hand hand){
-	int cardIdx = 0;
-	for (cardIdx = 0; cardIdx < CARD_PER_HAND; cardIdx++){
-		displayCard(&hand[cardIdx]); 
-	}
-}
-
-
-boolean straightFlush(Hand hand){
-
-	// ONE MORE CASE TO THINK ABOUT
-	// T J Q K A 
-
-
-	// five cards in sequnce and
-	// all of identical suits.
-	boolean identicalSuit = FALSE;
-	boolean inSequence = FALSE;
-	for (int idx = 0; idx < CARD_PER_HAND -1 ; idx++){
-		if (hand[idx].suit != hand[idx+1].suit){
-			return FALSE;
-		}else{
-			identicalSuit = TRUE;
-		}
-	}
-	if( TRUE == identicalSuit){
-		for(int idx = CARD_PER_HAND - 1; idx > 0; idx--){
-			if( (hand[idx].rank - hand[idx-1].rank) != 1){
-				return FALSE;
-			}else{
-				inSequence = TRUE;
-			}
-		}
-	}
-	if( TRUE == (inSequence && identicalSuit) ){
-		return TRUE;
-	}else{
-		return FALSE;
-	}
-}//straightFlush
-
-boolean fourOfAKind(Hand hand){
-	// four card of the same rank
-	int sameRankCounter = 0;
-	for (int idx = 0; idx < CARD_PER_HAND; idx++){
-		for (int j = 0; j < CARD_PER_HAND; j++){
-			if (hand[idx].rank == hand[j].rank ){
-				sameRankCounter++;
-				}
-			}
-		if(4 == sameRankCounter){
-			return TRUE;
-		}
-		sameRankCounter = 0;
-	}
-	return FALSE;
-} // fourOfAKind
-
-boolean fullHouse(Hand hand){
-	// Three cards of the same rank, and two cards of a different, matching rank
-	// so it combines of a three of a kind and a pair
-	if (threeOfAKind(hand) && onePair(hand)){
-			return TRUE;
-	}
-	return FALSE;
-} //fullHouse
-
-boolean flush(Hand hand){
-	// five card of same suit
-	boolean identicalSuit = FALSE;	
-	for (int idx = 0; idx < CARD_PER_HAND -1 ; idx++){
-		if (hand[idx].suit != hand[idx+1].suit){
-			return FALSE;
-		}else{
-			identicalSuit = TRUE;
-		}
-	}
-	return identicalSuit;
-} // flush
-
-boolean straight(Hand hand){
-	// Five cards in sequence.
-	boolean inSequence = FALSE;
-	for(int idx = CARD_PER_HAND - 1; idx > 0; idx--){
-			if( (hand[idx].rank - hand[idx-1].rank) != 1){
-				return FALSE;
-			}else{
-				inSequence = TRUE;
-			}
-		}
-}// straight
-
-boolean threeOfAKind(Hand hand){
-	// three card of the same rank
-	int sameRankCounter = 0;
-	for (int idx = 0; idx < CARD_PER_HAND; idx++){
-		for (int j = 0; j < CARD_PER_HAND; j++){
-			if (hand[idx].rank == hand[j].rank ){
-				sameRankCounter++;
-				
-			}
-		}
-		if(3 == sameRankCounter){
-			return TRUE;
-		}
-		sameRankCounter=0;
-	}
-	return FALSE;
-} // threeOfAKind
-
-boolean twoPair(Hand hand){
-	int pairCounter = 0;
-	int sameRankCounter = 0;
-	for (int idx = 0; idx < CARD_PER_HAND; idx++){
-		for (int j = 0; j < CARD_PER_HAND; j++){
-			if (hand[idx].rank == hand[j].rank ){
-				sameRankCounter++;
-			}
-		}
-		if(2 == sameRankCounter){
-			pairCounter++;
-		}
-		sameRankCounter = 0;
-	}
-	if( 4 == pairCounter ){
-		return TRUE;
-	}else{
-		return FALSE;
-	}
-} // twoPair
-
-boolean onePair(Hand hand){
-	int sameRankCounter = 0;
-	for (int idx = 0; idx < CARD_PER_HAND; idx++){
-		for (int j = 0; j < CARD_PER_HAND; j++){
-			if (hand[idx].rank == hand[j].rank ){
-				sameRankCounter++;
-			}
-		}
-		if(2 == sameRankCounter){
-			return TRUE;
-		}
-		sameRankCounter = 0;
-	}
-	return FALSE;
-}// onePair
-
-boolean highCard(Hand hand){
-
-} // highCard
-
-
-void tieBreaking(Hand* playerArray, int playerAmt){
+/*-------------------------displayWinner-------------------------------
+ *   function: void displayWinner(Hand *playerArray, int playerAmt)
+ *
+ *    Purpose: display  hand of each player in a gmae, 
+ * 				with a mark of "winner" to the winner in the game
+ * @param  		Hand *playerArray, 
+ *				int playerAmt
+ * @return void
+ *
+ *---------------------------------------------------------------*/
+void displayWinner(Hand *playerArray, int playerAmt){
 	int winner = winnerJudge(playerArray, playerAmt);
-	int *players = NULL;
-	players = (int*)malloc(sizeof(int) * playerAmt);
-	players[0] = 6;
-	printf("%d\n", players[0] );
 	int tag = winner;
 	int shfitCounter = 0;
+	printf(YELLOW"%s%s\n"RESET, "Player Hands: " , "winner(s)");
 	for (int i = 0;  i < playerAmt; i++){
 		if  ( (tag = winner & ( WINNER_MASK << ( shfitCounter) ))){
-			players[shfitCounter] = 1;
+			printf("Player %d] - ", shfitCounter + 1);
+			ranked(playerArray[shfitCounter]);
+			printf(RED"%s\n"RESET," - winner");
 		}else{
-			players[shfitCounter] = 0;
+			printf("Player %d] - ", shfitCounter + 1);
+			ranked(playerArray[shfitCounter]);
+			printf("\n");
 		}
 		shfitCounter++;
 	}
-	
-}
-
-
-void ranker(Hand* playerArray, int playerAmt){
-	for (int i = 0; i < playerAmt; i++ ){
-
-	}
-}
-
+} 
+/*-------------------------rankJudge-------------------------------
+ *   function: int rankJudge(Hand hand)
+ *
+ *    Purpose: judge the rank of a hand 
+ * @param  		Hand hand, 
+ *				
+ * @return int the index of the type of rank of a hand
+ *
+ *---------------------------------------------------------------*/
 int rankJudge(Hand hand){
 	if (straightFlush(hand)){
 		return IDX_STRAIGHT_FLUSH;
@@ -493,21 +461,19 @@ int rankJudge(Hand hand){
 	}
 }
 
-boolean AceStraight(Hand hand){
-	sortHandByRank(hand);
-	if( (hand[0].rank == A) && (hand[1].rank == 10) && (hand[2].rank == JACK) 
-			&& ( hand[3].rank == QUEEN ) && ( hand[4].rank == KING ) 
-
-			&& (hand[0].suit == hand[1].suit)  && ( hand[1].suit == hand[2].suit )
-				&& ( hand[2].suit == hand[3].suit) && ( hand[3].suit == hand[4].suit) ){
-		return TRUE;
-	}
-	else{
-		return FALSE;
-	}	
-}
-
+/*-------------------------winnerJudge-------------------------------
+ *   function: int winnerJudge(Hand* playerArray, int playerAmt)
+ *
+ *    Purpose: determine whose is the winnder(s) of a game
+ *				
+ * @param  		Hand hand, 
+ *				
+ * @return int the index of the type of rank of a hand
+ *
+ *---------------------------------------------------------------*/
 int winnerJudge(Hand* playerArray, int playerAmt){
+	// use bit wise operation on the winner to handle 
+	// who is the winner(s)
 	int highesrank = IDX_HIGH_CARD;
 	int winner = LOSS ;
 	int t_rank = highesrank;
@@ -528,78 +494,235 @@ int winnerJudge(Hand* playerArray, int playerAmt){
 	return winner;
 }
 
-void displayWinner(Hand *playerArray, int playerAmt){
+/*-------------------------straightFlush-------------------------------
+ *   function: boolean straightFlush(Hand hand){
+ *
+ *    Purpose: determine if a hand is straight flush
+ * @param  		Hand hand
+ * @return TRUE if it is a hand of straight flush
+ *
+ *---------------------------------------------------------------*/
+boolean straightFlush(Hand hand){
+	// five cards in sequnce and
+	// all of identical suits.
+	boolean identicalSuit = FALSE;
+	boolean inSequence = FALSE;
+	// determine if the suit of each card in the hand is the same
+	for (int idx = 0; idx < CARD_PER_HAND -1 ; idx++){
+		if (hand[idx].suit != hand[idx+1].suit){
+			return FALSE;
+		}else{
+			identicalSuit = TRUE;
+		}
+	}
+	// determine if the rank of each card in the hand is in sequence
+	if( TRUE == identicalSuit){
+		for(int idx = CARD_PER_HAND - 1; idx > 0; idx--){
+			if( (hand[idx].rank - hand[idx-1].rank) != 1){
+				return FALSE;
+			}else{
+				inSequence = TRUE;
+			}
+		}
+	}
+	// determine if it is a straight flush
+	if( TRUE == (inSequence && identicalSuit) ){
+		return TRUE;
+	}else{
+		return FALSE;
+	}
+}//straightFlush
+
+/*-------------------------fourOfAKind-------------------------------
+ *   function: boolean fourOfAKind(Hand hand)
+ *
+ *    Purpose: determine if a hand is four of a kind
+ * @param  		Hand hand
+ * @return TRUE if it is a hand of four of a kind
+ *
+ *---------------------------------------------------------------*/
+boolean fourOfAKind(Hand hand){
+	// four card of the same rank
+	int sameRankCounter = 0;
+	for (int idx = 0; idx < CARD_PER_HAND; idx++){
+		for (int j = 0; j < CARD_PER_HAND; j++){
+			if (hand[idx].rank == hand[j].rank ){
+				sameRankCounter++;
+				}
+			}
+		// if there are four card of same rank	
+		if(4 == sameRankCounter){
+			return TRUE;
+		}
+		sameRankCounter = 0;
+	}
+	return FALSE;
+} // fourOfAKind
+
+boolean fullHouse(Hand hand){
+	// Three cards of the same rank, and two cards of a different, matching rank
+	// so it combines of a three of a kind and a pair
+	if (threeOfAKind(hand) && onePair(hand)){
+			return TRUE;
+	}
+	return FALSE;
+} //fullHouse
+
+/*-------------------------flush-------------------------------
+ *   function: boolean flush(Hand hand)
+ *
+ *    Purpose: determine if a hand is flush
+ * @param  		Hand hand
+ * @return TRUE if it is a hand of flush
+ *---------------------------------------------------------------*/
+boolean flush(Hand hand){
+	// five card of same suit
+	boolean identicalSuit = FALSE;	
+	for (int idx = 0; idx < CARD_PER_HAND -1 ; idx++){
+		if (hand[idx].suit != hand[idx+1].suit){
+			return FALSE;
+		}else{
+			identicalSuit = TRUE;
+		}
+	}
+	return identicalSuit;
+} // flush
+
+/*-------------------------straight-------------------------------
+ *   function: boolean straight(Hand hand)
+ *
+ *    Purpose: determine if a hand is straight
+ * @param  		Hand hand
+ * @return TRUE if it is a hand of straight
+ *---------------------------------------------------------------*/
+boolean straight(Hand hand){
+	// Five cards in sequence.
+	boolean inSequence = FALSE;
+	for(int idx = CARD_PER_HAND - 1; idx > 0; idx--){
+			if( (hand[idx].rank - hand[idx-1].rank) != 1){
+				return FALSE;
+			}else{
+				inSequence = TRUE;
+			}
+		}
+}// straight
+/*-------------------------threeOfAKind-------------------------------
+ *   function: boolean threeOfAKind(Hand hand)
+ *
+ *    Purpose: determine if a hand is three of a kind
+ * @param  		Hand hand
+ * @return TRUE if it is a hand of three of a kind
+ *---------------------------------------------------------------*/
+boolean threeOfAKind(Hand hand){
+	// three card of the same rank
+	int sameRankCounter = 0;
+	for (int idx = 0; idx < CARD_PER_HAND; idx++){
+		for (int j = 0; j < CARD_PER_HAND; j++){
+			if (hand[idx].rank == hand[j].rank ){
+				sameRankCounter++;
+				
+			}
+		}
+		// if there are three card of same rank	
+		if(3 == sameRankCounter){
+			return TRUE;
+		}
+		sameRankCounter=0;
+	}
+	return FALSE;
+} // threeOfAKind
+
+/*-------------------------threeOfAKind-------------------------------
+ *   function: boolean threeOfAKind(Hand hand)
+ *
+ *    Purpose: determine if a hand is three of a kind
+ * @param  		Hand hand
+ * @return TRUE if it is a hand of three of a kind
+ *---------------------------------------------------------------*/
+boolean twoPair(Hand hand){
+	int pairCounter = 0;
+	int sameRankCounter = 0;
+	for (int idx = 0; idx < CARD_PER_HAND; idx++){
+		for (int j = 0; j < CARD_PER_HAND; j++){
+			if (hand[idx].rank == hand[j].rank ){
+				sameRankCounter++;
+			}
+		}
+		if(2 == sameRankCounter){
+			pairCounter++;
+		}
+		sameRankCounter = 0;
+	}
+	// comparing with 4 because if it is two, it means one pair
+	if( 4 == pairCounter ){
+		return TRUE;
+	}else{
+		return FALSE;
+	}
+} // twoPair
+/*-------------------------onePair-------------------------------
+ *   function: boolean onePair(Hand hand)
+ *
+ *    Purpose: determine if a hand is onePair
+ * @param  		Hand hand
+ * @return TRUE if it is a hand of onePair
+ *---------------------------------------------------------------*/
+boolean onePair(Hand hand){
+	int sameRankCounter = 0;
+	for (int idx = 0; idx < CARD_PER_HAND; idx++){
+		for (int j = 0; j < CARD_PER_HAND; j++){
+			if (hand[idx].rank == hand[j].rank ){
+				sameRankCounter++;
+			}
+		}
+		if(2 == sameRankCounter){
+			return TRUE;
+		}
+		sameRankCounter = 0;
+	}
+	return FALSE;
+}// onePair
+// empty function, 
+boolean highCard(Hand hand){
+
+} // highCard
+/*-------------------------AceStraight-------------------------------
+ *   function: boolean AceStraight(Hand hand)
+ *
+ *    Purpose: determine if a hand is determine a hand is a striaight of 10, J, Q, K, A
+ * @param  		Hand hand
+ * @return TRUE if it is a hand of determine a hand is a striaight of 10, J, Q, K, A
+ *---------------------------------------------------------------*/
+boolean AceStraight(Hand hand){
+	sortHandByRank(hand);
+	if( (hand[0].rank == A) && (hand[1].rank == 10) && (hand[2].rank == JACK) 
+			&& ( hand[3].rank == QUEEN ) && ( hand[4].rank == KING ) 
+
+			&& (hand[0].suit == hand[1].suit)  && ( hand[1].suit == hand[2].suit )
+				&& ( hand[2].suit == hand[3].suit) && ( hand[3].suit == hand[4].suit) ){
+		return TRUE;
+	}
+	else{
+		return FALSE;
+	}	
+}
+
+
+void tieBreaking(Hand* playerArray, int playerAmt){
 	int winner = winnerJudge(playerArray, playerAmt);
+	int *players = NULL;
+	players = (int*)malloc(sizeof(int) * playerAmt);
+	players[0] = 6;
+	printf("%d\n", players[0] );
 	int tag = winner;
 	int shfitCounter = 0;
-	printf(YELLOW"%s%s\n"RESET, "Player Hands: " , "winner(s)");
 	for (int i = 0;  i < playerAmt; i++){
 		if  ( (tag = winner & ( WINNER_MASK << ( shfitCounter) ))){
-			printf("Player %d] - ", shfitCounter + 1);
-			ranked(playerArray[shfitCounter]);
-			printf(RED"%s\n"RESET," - winner");
+			players[shfitCounter] = 1;
 		}else{
-			printf("Player %d] - ", shfitCounter + 1);
-			ranked(playerArray[shfitCounter]);
-			printf("\n");
+			players[shfitCounter] = 0;
 		}
 		shfitCounter++;
 	}
-} 
-
-
-void PokerGameTester(const int argc, char* const argv[]){
-
 	
-	boolean isValide = FALSE;
-	// validation the command-line argument
-	isValide = validation(argc, argv);
-
-	if (isValide == FALSE){
-		exit(EXIT_FAILURE);
-	}
-
-	int amtPlayers = atoi(argv[2]);
-	Hand  playerArray[amtPlayers];
-
-	TfDeck deck;
-	// displaySymbolExplaination();
-	generateDeck(deck);
-	displayDeck("original deck of card: \n" , deck);
-	shuffleDeck(deck);
-	displayDeck("shuffled deck of card: \n", deck);
-
-	dealer(deck,  playerArray, amtPlayers );
-	printf("\n");
-	displayHands(playerArray, amtPlayers, DEALT);
-	sortHandsByRank(playerArray, amtPlayers);
-	printf("\n");
-	displayHands(playerArray, amtPlayers, SORTED);
-	printf("\n");
-	displayHands(playerArray, amtPlayers, RANKED);
-	printf("\n");
-	displayWinner(playerArray, amtPlayers);
-	// displayHands(playerArray, amtPlayers, WINNER);
-	Hand hand;
-	printf("\n");
-	test(hand);
-
-	tieBreaking(playerArray, amtPlayers);
-
-}// PokerGameTester
-
-
-void PokerRankTester(){
-	Hand hand;
-	// hand of straight flush
-	hand[0] = generateCard(DIAMOND, 3);
-	hand[1] = generateCard(CLUB, 4);
-	hand[2] = generateCard(SPADE, 8);
-	hand[3] = generateCard(DIAMOND, 6);
-	hand[4] = generateCard(DIAMOND, 7);
-	displayHand(hand);
-
-	printf("%s\n",rankJudge(hand) );
-
 }
-

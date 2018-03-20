@@ -1,5 +1,5 @@
 #include"MainPoker.h"
-#include<stdio.h>
+#include<stdio.h> // used for printf("%s\n", );
 
 /*-------------------------generateCard-------------------------------
  *   function: unsigned generateCard(unsigned suit, unsigned rank)
@@ -41,11 +41,4 @@ void displayCard(Card* const card){
 	char str[12];
 	sprintf(str, "[%s - %s]", card->rankSym, card->suitSym);
 	printf("%10s", str);
-}
-
-// for testing purpose only, when developing.
-// you can ignore it.
-void cardTester(){
-	Card c = generateCard(DIAMOND, 3);
-	displayCard(&c);
 }

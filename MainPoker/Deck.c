@@ -93,15 +93,3 @@ void swap(Card * cardA, Card * cardB){
 	*cardA = *cardB;
 	*cardB = tmp;
 }
-
-
-/*
- for testing purpose when developing Deck.c
-*/
-void DeckTester(){
-	TfDeck deck;
-	generateDeck(deck);
-	displayDeck("original deck of card: \n" , deck);
-	shuffleDeck(deck);
-	displayDeck("shuffled deck of card: \n", deck);
-}
