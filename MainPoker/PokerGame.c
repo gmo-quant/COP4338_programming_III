@@ -52,7 +52,7 @@ boolean validation(const int argc, char* const argv[]){
 		printf(" %s\n", warning);
 		return FALSE;
 	}
-}// validation
+}// validation() end
 
 
 
@@ -71,7 +71,7 @@ boolean validPlayerAmt(const int playerAmt ){
 	}else{
 		return FALSE;
 	}
-} //validatePlayer
+} //validatePlayer() end
 
 /*-------------------------validCardsPerHand-------------------------------
  *   function: boolean validCardsPerHand(const int cardPerHand ){
@@ -88,7 +88,7 @@ boolean validCardsPerHand(const int cardPerHand ){
 	}else{
 		return TRUE;
 	}
-}// validaeHandAmt
+}// validaeHandAmt() end
 
 
 /*-------------------------displaySymbolExplaination-------------------------------
@@ -110,7 +110,7 @@ void displaySymbolExplaination(){
 	H represent Heart \n \
 	S represent SPADE \n "RESET;
 	printf("\n%s\n", instruction);
-}
+} // displaySymbolExplaination() end
 
 
 /*-------------------------dealer-------------------------------
@@ -144,7 +144,7 @@ void dealer(TfDeck deck, Hand* playerArray, int players){
 			cardDealedCounter++;
 		}
 	}
-}
+}// dealer() end
 
 /*-------------------------sortHandsByRank-------------------------------
  *   function:void sortHandsByRank(Hand* playerArray, int amtPlayers)
@@ -178,7 +178,7 @@ void sortHandByRank(Hand hand){
 			}
 		}
 	}
-}
+}// sortHandByRank() end
 /*-------------------------Gswap-------------------------------
  *   function:void Gswap(Card* card1, Card * card2)
  *    Purpose: swap card1 and card2
@@ -224,7 +224,8 @@ void displayHands(Hand* playerArray, int players, int type){
 		display[type](playerArray[playerCounter]);
 		printf("\n");
 	}
-}
+} // displayHands() end
+
 /*-------------------------displayHand-------------------------------
  *   function: void displayHand(Hand hand)
  *
@@ -384,7 +385,8 @@ void test(Hand handfake){
 	printf("%s", "Hand :  "); 
 	ranked(hand);
 	printf("\n");
-}
+}// test() end
+
 /*-------------------------displayWinner-------------------------------
  *   function: void displayWinner(Hand *playerArray, int playerAmt)
  *
@@ -412,7 +414,7 @@ void displayWinner(Hand *playerArray, int playerAmt){
 		}
 		shfitCounter++;
 	}
-} 
+} // displayWinner() end
 /*-------------------------rankJudge-------------------------------
  *   function: int rankJudge(Hand hand)
  *
@@ -459,7 +461,7 @@ int rankJudge(Hand hand){
 			return IDX_HIGH_CARD;
 		}		
 	}
-}
+} // rankJudge() end
 
 /*-------------------------winnerJudge-------------------------------
  *   function: int winnerJudge(Hand* playerArray, int playerAmt)
@@ -492,7 +494,7 @@ int winnerJudge(Hand* playerArray, int playerAmt){
 		}
 	}
 	return winner;
-}
+}// winnerJudge() end
 
 /*-------------------------straightFlush-------------------------------
  *   function: boolean straightFlush(Hand hand){
@@ -531,7 +533,7 @@ boolean straightFlush(Hand hand){
 	}else{
 		return FALSE;
 	}
-}//straightFlush
+}//straightFlush end
 
 /*-------------------------fourOfAKind-------------------------------
  *   function: boolean fourOfAKind(Hand hand)
@@ -557,7 +559,7 @@ boolean fourOfAKind(Hand hand){
 		sameRankCounter = 0;
 	}
 	return FALSE;
-} // fourOfAKind
+} // fourOfAKind() end
 
 boolean fullHouse(Hand hand){
 	// Three cards of the same rank, and two cards of a different, matching rank
@@ -566,7 +568,7 @@ boolean fullHouse(Hand hand){
 			return TRUE;
 	}
 	return FALSE;
-} //fullHouse
+} //fullHouse() end
 
 /*-------------------------flush-------------------------------
  *   function: boolean flush(Hand hand)
@@ -586,7 +588,7 @@ boolean flush(Hand hand){
 		}
 	}
 	return identicalSuit;
-} // flush
+} // flush() end
 
 /*-------------------------straight-------------------------------
  *   function: boolean straight(Hand hand)
@@ -605,7 +607,7 @@ boolean straight(Hand hand){
 				inSequence = TRUE;
 			}
 		}
-}// straight
+}// straight() end
 /*-------------------------threeOfAKind-------------------------------
  *   function: boolean threeOfAKind(Hand hand)
  *
@@ -630,7 +632,7 @@ boolean threeOfAKind(Hand hand){
 		sameRankCounter=0;
 	}
 	return FALSE;
-} // threeOfAKind
+} // threeOfAKind() end
 
 /*-------------------------threeOfAKind-------------------------------
  *   function: boolean threeOfAKind(Hand hand)
@@ -659,7 +661,7 @@ boolean twoPair(Hand hand){
 	}else{
 		return FALSE;
 	}
-} // twoPair
+} // twoPair() end
 /*-------------------------onePair-------------------------------
  *   function: boolean onePair(Hand hand)
  *
@@ -681,7 +683,7 @@ boolean onePair(Hand hand){
 		sameRankCounter = 0;
 	}
 	return FALSE;
-}// onePair
+}// onePair() end
 // empty function, 
 boolean highCard(Hand hand){
 
@@ -705,7 +707,7 @@ boolean AceStraight(Hand hand){
 	else{
 		return FALSE;
 	}	
-}
+}// AceStraight() end
 
 
 void tieBreaking(Hand* playerArray, int playerAmt){

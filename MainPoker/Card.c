@@ -25,7 +25,7 @@ Card generateCard(unsigned suit, unsigned rank){
 			{"", "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
 
 	return (Card) {suit, rank, suitSymbol[suit/SUITSTEP], rankSymbol[rank]};
-}
+}// generateCard() end
 
 /*------------------------ displayCard-------------------------------
  *   function: void displayCard(unsigned card)

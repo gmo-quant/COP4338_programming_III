@@ -15,7 +15,7 @@
 
 unsigned generateCard(unsigned suit, unsigned rank){
 	return suit + rank;	
-}
+}// generateCard() end
 
 /*-------------------------getSuitSymbol-------------------------------
  *   function: SuitSymbolTf getSuitSymbol(unsigned suit)
@@ -30,15 +30,15 @@ unsigned generateCard(unsigned suit, unsigned rank){
 
 SuitSymbolTf getSuitSymbol(unsigned suit){
 	SuitSymbolTf suitSymbol[] = 
-								{
-									DIAMOND_SYMBOL, 
-									CLUB_SYMBOL,
-									HEART_SYMBOL,
-									SPADE_SYMBOL 
-								}; 
+		{
+			DIAMOND_SYMBOL, 
+			CLUB_SYMBOL,
+			HEART_SYMBOL,
+			SPADE_SYMBOL 
+		}; 
 	int suitStep = 16; // for getting the index of suitsymbol
 	return suitSymbol[suit/suitStep];
-}
+}// getSuitSymbol() end
 
 
 /*-------------------------getRankSymbol-------------------------------
@@ -57,7 +57,7 @@ RankSymbolTf getRankSymbol(unsigned rank){
 	RankSymbolTf rankSymbol[] = 
 			{" ", "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
 	return rankSymbol[rank];
-}
+}// getRankSymbol() end
 
 
 /*-------------------------getCardSymbol-------------------------------
@@ -78,7 +78,7 @@ void getCardSymbol(unsigned card, CardSymbolTf cardSymbol){
 	SuitSymbolTf suitSymbol = getSuitSymbol(suit);
 	RankSymbolTf rankSymbol = getRankSymbol(rank);
 	sprintf(cardSymbol, "[%s - %s]", suitSymbol , rankSymbol);
-}
+}// getCardSymbol() end
 
 /*-------------------------getSuit-------------------------------
  *   function: unsigned getSuit(unsigned card)
@@ -125,12 +125,6 @@ void displayCard(unsigned card){
 	CardSymbolTf cardSymbol;
 	getCardSymbol(card,cardSymbol);
 	printf("%s", cardSymbol);
-
 }
 
 
-// for testing purpose when developing
-void CardTester(){
-	unsigned card = generateCard(0, 1);
-	displayCard(card);
-}

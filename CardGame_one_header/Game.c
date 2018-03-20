@@ -77,7 +77,7 @@ boolean validation(int argc, char * argv[]){
 		return FALSE;
 	}
 	return TRUE;
-} // validation()
+} // validation() end
 
 
 /*-------------------------dealer-------------------------------
@@ -111,20 +111,13 @@ void dealer(TfDeck deck, unsigned * playerArray, int players, int cardsPerHand){
 	}
 	// the first card in the deck array starting from index 1;
 	int cardDealedCounter = 1; 
-	// deal (from the top of the deck) the cardsPerHand of cards 
-	// to the "players" of players 
-	// starting from the top of the deck, 
-	// player by player
-	// for example, 5 players to play
-	// one card to 1st player, 2nd player ...5th player in order
-	// then the second card, until cardsPerHand
 	for (cardCounter= 0; cardCounter< cardsPerHand; cardCounter++){
 		for (playerCounter= 0; playerCounter< players; playerCounter++){
 			*((playerArray + (playerCounter * cardsPerHand) ) +cardCounter) = deck[cardDealedCounter];
 			cardDealedCounter++;
 		}
 	}
-}
+}//dealer() end
 
 /*-------------------------displayHands-------------------------------
  *   function: displayHands(unsigned * playerArray, int players, int cardsPerHand)
@@ -154,7 +147,7 @@ void displayHands(unsigned * playerArray, int players, int cardsPerHand){
 		}
 		printf("\n\n");
 	}
-}
+}//displayHands() end
 
 
 /*-------------------------displaySymbolExplaination-------------------------------
@@ -176,46 +169,9 @@ void displaySymbolExplaination(){
 	H represent Heart \n \
 	S represent SPADE \n "RESET;
 	printf("\n%s\n", instruction);
-}
+} // displaySymbolExplaination() end
 
 
-/*-------------------------game-------------------------------
- *   function:  game()
- *
- *    Purpose: start a game
- *
- * @param  none
- *
- * @return void
- *
- *---------------------------------------------------------------*/
-void game(int argc, char* argv[]){
-	boolean isValide = FALSE;
-	// validation the command-line argument
-	isValide = validation(argc, argv);
-
-	if (isValide == FALSE){
-		exit(EXIT_FAILURE);
-	}
-	
-	int amtCardsEachHand = atoi(argv[1]);
-	int amtPlayers = atoi(argv[2]);
-	unsigned  playerArray[amtPlayers][amtCardsEachHand];
-
-	TfDeck deck;
-	displaySymbolExplaination();
-	generateDeck(deck);
-	displayDeck("original deck of card: \n" , deck);
-	shuffleDeck(deck);
-	displayDeck("shuffled deck of card: \n", deck);
-	dealer(deck,  (unsigned *) playerArray, amtPlayers, amtCardsEachHand );
-	displayHands(  (unsigned *) playerArray, amtPlayers, amtCardsEachHand);
-}
 
 
-// for testing purpose when developing Game.c
-
-void GameTester(int argc, char* argv[]){
-	game(argc, argv);
-}
 

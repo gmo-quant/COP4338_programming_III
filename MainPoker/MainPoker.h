@@ -66,6 +66,7 @@ void displayCard(Card* const card);
 // there are 52 cards in a deck, but we start from 1 instead of 0, 
 // so it is 53
 #define DECKSIZE	53
+#define MAX_RANK	13
 // typedef an array for storing the repesentation of a deck of cards
 typedef Card TfDeck[DECKSIZE] ;
 

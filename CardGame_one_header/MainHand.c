@@ -90,6 +90,25 @@
 #include<stdlib.h>	// to use the MACRO EXIT_SUCCESS,
 
 int main(int argc, char * argv[]){
-	game(argc,  argv);
+	boolean isValide = FALSE;
+	// validate the command-line argument
+	isValide = validation(argc, argv);
+
+	if (isValide == FALSE){
+		exit(EXIT_FAILURE);
+	}
+	
+	int amtCardsEachHand = atoi(argv[1]);
+	int amtPlayers = atoi(argv[2]);
+	unsigned  playerArray[amtPlayers][amtCardsEachHand];
+
+	TfDeck deck;
+	displaySymbolExplaination();
+	generateDeck(deck);
+	displayDeck("original deck of card: \n" , deck);
+	shuffleDeck(deck);
+	displayDeck("shuffled deck of card: \n", deck);
+	dealer(deck,  (unsigned *) playerArray, amtPlayers, amtCardsEachHand );
+	displayHands(  (unsigned *) playerArray, amtPlayers, amtCardsEachHand);
 	return EXIT_SUCCESS;
-}
+}// main() end

@@ -14,9 +14,6 @@
  *
  *---------------------------------------------------------------*/
 void generateDeck(TfDeck deck){
-	// initialize cards of a deck to be blank, 
-	// fill in 0;
-
 	unsigned suitArray[SUIT_T] = {DIAMOND, CLUB, HEART, SPADE};
 	unsigned suit = DIAMOND; // counter for suit;
 	unsigned rank = A; // counter for rank;
@@ -28,7 +25,7 @@ void generateDeck(TfDeck deck){
 			deck[suitStartLoc + rank ] = generateCard(suitArray[suit], rank);
 		}
 	}
-}
+}// generateDeck() end
 
 /*-------------------------displayDeck-------------------------------
  *   function: displayDeck(char* prompt, TfDeck deck)
@@ -47,13 +44,13 @@ void displayDeck(char* prompt, TfDeck deck){
 		// card = deck[counter];
 		displayCard(&deck[counter]);
 		printf(", ");
-		if ( (counter % 13) == 0){
+		if ( (counter % MAX_RANK) == 0){
 			printf("\n");
 			printf("\n");
 		}
 	}	
 	printf("\n");
-}
+}// displayDeck() end
 
 /*-------------------------shuffleDeck-------------------------------
  *   function: shuffleDeck(TfDeck deck)
@@ -74,7 +71,7 @@ void shuffleDeck(TfDeck deck){
 		randomNum = (rand() + lowerBound ) % upperBound +1;
 		swap(&deck[upperBound], &deck[randomNum]);
 	}
-}
+}// sheffleDeck() end
 
 
 /*-------------------------swap-------------------------------

@@ -59,6 +59,8 @@ use bitwise operation 'and' to decode its meaning
 #define ARG_CARD_PER_HAND 1
 #define ARG_PLAYERS	2
 
+#define MAX_RANK	13
+
 typedef enum {TRUE = 1, FALSE = 0} boolean ;
 
 
@@ -85,10 +87,6 @@ RankSymbolTf getRankSymbol(unsigned rank);
 void getCardSymbol(unsigned card, CardSymbolTf cardSymbol);
 		// get the string representation of a card
 void displayCard(unsigned card);
-void CardTester(); 	
-		// for testing purpose when developing
-
-
 /*
 	 function prototype for operating on a deck of card
 */
@@ -97,22 +95,8 @@ void displayDeck(char* prompt, TfDeck deck);
 void shuffleDeck(TfDeck deck);
 void swap(unsigned * cardA, unsigned * cardB); 
 		// helper function in shuffleDeck()
-void DeckTester(); 	
-		// for testing purpose when developing Deck.c
-
-
-// macro for a card game 
-// and function prototype for playing a card game.
-
-
 // validate the players amount and cardsperhand from the cmd arg
 boolean validation(int argc, char* argv[]);
-
 void dealer(TfDeck deck, unsigned * playerArray, int players, int cardsPerHand);
 void displayHands(unsigned * playerArray, int players, int cardsPerHand);
-
-void game(int argc, char* argv[]); 	// start a game
-
 void displaySymbolExplaination();
-
-void GameTester(int argc, char* argv[]);
