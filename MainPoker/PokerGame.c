@@ -175,13 +175,105 @@ void sorted(Hand hand){
 }
 void ranked(Hand hand){
 	displayHand(hand);
-	printf(YELLOW" - %10s"RESET, rankJudgement[rankJudge(hand)] );
+	printf(YELLOW" - %-15s"RESET, rankJudgement[rankJudge(hand)] );
 }
 void winner(Hand hand){
 	// winnerJudge()
 }
-void test(Hand hand){
+void test(Hand handfake){
+	printf(YELLOW"%s%s\n"RESET, "Player Hands: " , "TEST");
+
+	// High Card
+	Hand hand;
+	hand[0] = generateCard(DIAMOND, 2);
+	hand[1] = generateCard(CLUB, 3);
+	hand[2] = generateCard(DIAMOND, 4);
+	hand[3] = generateCard(SPADE, 6);
+	hand[4] = generateCard(HEART, QUEEN);
+	printf("%s", "Hand :  "); 
 	ranked(hand);
+	printf("\n");
+
+	// One Pair
+	hand[0] = generateCard(DIAMOND, 4);
+	hand[1] = generateCard(CLUB, 5);
+	hand[2] = generateCard(DIAMOND, 5);
+	hand[3] = generateCard(SPADE, 7);
+	hand[4] = generateCard(HEART, 10);
+	printf("%s", "Hand :  "); 
+	ranked(hand);
+	printf("\n");
+
+	// Two Pair
+	hand[0] = generateCard(DIAMOND, 3);
+	hand[1] = generateCard(CLUB, 3);
+	hand[2] = generateCard(DIAMOND, 10);
+	hand[3] = generateCard(SPADE, 10);
+	hand[4] = generateCard(HEART, QUEEN);
+	printf("%s", "Hand :  "); 
+	ranked(hand);
+	printf("\n");
+
+	// Three of a Kind
+	hand[0] = generateCard(DIAMOND, 3);
+	hand[1] = generateCard(CLUB, 3);
+	hand[2] = generateCard(DIAMOND, 3);
+	hand[3] = generateCard(SPADE, 6);
+	hand[4] = generateCard(HEART, QUEEN);
+	printf("%s", "Hand :  "); 
+	ranked(hand);
+	printf("\n");
+
+
+	// Straight
+	hand[0] = generateCard(DIAMOND, 1);
+	hand[1] = generateCard(CLUB, 2);
+	hand[2] = generateCard(DIAMOND, 3);
+	hand[3] = generateCard(SPADE, 4);
+	hand[4] = generateCard(HEART, 5);
+	printf("%s", "Hand :  "); 
+	ranked(hand);
+	printf("\n");
+
+	// Flush
+	hand[0] = generateCard(DIAMOND, 10);
+	hand[1] = generateCard(CLUB, JACK);
+	hand[2] = generateCard(DIAMOND, QUEEN);
+	hand[3] = generateCard(SPADE, KING);
+	hand[4] = generateCard(HEART, A);
+	printf("%s", "Hand :  "); 
+	ranked(hand);
+	printf("\n");	
+
+	// Full House
+	hand[0] = generateCard(DIAMOND, 3);
+	hand[1] = generateCard(CLUB, 3);
+	hand[2] = generateCard(DIAMOND, 3);
+	hand[3] = generateCard(SPADE, QUEEN);
+	hand[4] = generateCard(HEART, QUEEN);
+	printf("%s", "Hand :  "); 
+	ranked(hand);
+	printf("\n");
+
+	// Four of a Kind
+	hand[0] = generateCard(DIAMOND, 3);
+	hand[1] = generateCard(CLUB, 3);
+	hand[2] = generateCard(DIAMOND, 3);
+	hand[3] = generateCard(SPADE, 3);
+	hand[4] = generateCard(HEART, QUEEN);
+	printf("%s", "Hand :  "); 
+	ranked(hand);
+	printf("\n");
+
+	// Straight Flush
+	hand[0] = generateCard(DIAMOND, 10);
+	hand[1] = generateCard(DIAMOND, JACK);
+	hand[2] = generateCard(DIAMOND, QUEEN);
+	hand[3] = generateCard(DIAMOND, KING);
+	hand[4] = generateCard(DIAMOND, A);
+	printf("%s", "Hand :  "); 
+	ranked(hand);
+	printf("\n");
 }
 
 void displayHand(Hand hand){
@@ -336,6 +428,24 @@ boolean highCard(Hand hand){
 } // highCard
 
 
+void tieBreaking(Hand* playerArray, int playerAmt){
+	int winner = winnerJudge(playerArray, playerAmt);
+	int *players = NULL;
+	players = (int*)malloc(sizeof(int) * playerAmt);
+	players[0] = 6;
+	printf("%d\n", players[0] );
+	int tag = winner;
+	int shfitCounter = 0;
+	for (int i = 0;  i < playerAmt; i++){
+		if  ( (tag = winner & ( WINNER_MASK << ( shfitCounter) ))){
+			players[shfitCounter] = 1;
+		}else{
+			players[shfitCounter] = 0;
+		}
+		shfitCounter++;
+	}
+	
+}
 
 
 void ranker(Hand* playerArray, int playerAmt){
@@ -351,7 +461,7 @@ int rankJudge(Hand hand){
 		return IDX_FOUR_KIND;
 	}else if(fullHouse(hand)){
 		return IDX_FULL_HOUSE;
-	}else if (flush(hand)){
+	}else if (flush(hand) && !AceStraight(hand)){
 		return IDX_FLUSH;
 	}else if(straight(hand)){
 		return IDX_STRAIGHT;
@@ -362,14 +472,44 @@ int rankJudge(Hand hand){
 	}else if(onePair(hand)){
 		return IDX_ONE_PAIR;
 	}else{
-		return IDX_HIGH_CARD;
+		sortHandByRank(hand);
+		if( (hand[0].rank == A) && (hand[1].rank == 10) && (hand[2].rank == JACK) 
+			&& ( hand[3].rank == QUEEN ) && ( hand[4].rank == KING ) )
+		{
+
+			if( (hand[0].suit == hand[1].suit)  && ( hand[1].suit == hand[2].suit )
+				&& ( hand[2].suit == hand[3].suit) && ( hand[3].suit == hand[4].suit) )
+			{
+				return IDX_STRAIGHT_FLUSH;
+			}
+			else
+			{
+				return IDX_FLUSH;
+			}
+
+		}else{
+			return IDX_HIGH_CARD;
+		}		
 	}
+}
+
+boolean AceStraight(Hand hand){
+	sortHandByRank(hand);
+	if( (hand[0].rank == A) && (hand[1].rank == 10) && (hand[2].rank == JACK) 
+			&& ( hand[3].rank == QUEEN ) && ( hand[4].rank == KING ) 
+
+			&& (hand[0].suit == hand[1].suit)  && ( hand[1].suit == hand[2].suit )
+				&& ( hand[2].suit == hand[3].suit) && ( hand[3].suit == hand[4].suit) ){
+		return TRUE;
+	}
+	else{
+		return FALSE;
+	}	
 }
 
 int winnerJudge(Hand* playerArray, int playerAmt){
 	int highesrank = IDX_HIGH_CARD;
 	int winner = LOSS ;
-	printf("initial winner val : %d \n",  winner);
 	int t_rank = highesrank;
 	// figure out what is the higest rank
 	for (int playerCounter= 0; playerCounter< playerAmt; playerCounter++){
@@ -390,14 +530,16 @@ int winnerJudge(Hand* playerArray, int playerAmt){
 
 void displayWinner(Hand *playerArray, int playerAmt){
 	int winner = winnerJudge(playerArray, playerAmt);
-	printf("winner val: %d \n", winner );
 	int tag = winner;
 	int shfitCounter = 0;
+	printf(YELLOW"%s%s\n"RESET, "Player Hands: " , "winner(s)");
 	for (int i = 0;  i < playerAmt; i++){
 		if  ( (tag = winner & ( WINNER_MASK << ( shfitCounter) ))){
+			printf("Player %d] - ", shfitCounter + 1);
 			ranked(playerArray[shfitCounter]);
 			printf(RED"%s\n"RESET," - winner");
 		}else{
+			printf("Player %d] - ", shfitCounter + 1);
 			ranked(playerArray[shfitCounter]);
 			printf("\n");
 		}
@@ -428,26 +570,23 @@ void PokerGameTester(const int argc, char* const argv[]){
 	displayDeck("shuffled deck of card: \n", deck);
 
 	dealer(deck,  playerArray, amtPlayers );
+	printf("\n");
+	displayHands(playerArray, amtPlayers, DEALT);
+	sortHandsByRank(playerArray, amtPlayers);
+	printf("\n");
+	displayHands(playerArray, amtPlayers, SORTED);
+	printf("\n");
 	displayHands(playerArray, amtPlayers, RANKED);
-	// printf("winner is %d\n",  winnerJudge(playerArray, amtPlayers) );
+	printf("\n");
+	displayWinner(playerArray, amtPlayers);
+	// displayHands(playerArray, amtPlayers, WINNER);
+	Hand hand;
+	printf("\n");
+	test(hand);
 
-	// int winner = winnerJudge(playerArray, amtPlayers);
-	// printf("winner val: %d \n", winner );
-	// int tag = winner;
-	// int shfitCounter = 0;
-	// for (int i = 0;  i < MAX_PLAYER_AMT; i++){
-	// 	if  ( (tag = winner & ( WINNER_MASK << ( shfitCounter) ))){
-	// 		printf("winner : %d \n", shfitCounter   + 1);
-	// 	}
-	// 	shfitCounter++;
-	// }
+	tieBreaking(playerArray, amtPlayers);
 
-	displayWinner(playerArray, amtPlayers );
-	// displayHands( playerArray, amtPlayers, "Player Hands: (default from top/front of deck");
-	// sortHandsByRank(playerArray, amtPlayers);
-	// displayHands( playerArray, amtPlayers, "Player Hands: sorted");
 }// PokerGameTester
-
 
 
 void PokerRankTester(){
@@ -461,41 +600,6 @@ void PokerRankTester(){
 	displayHand(hand);
 
 	printf("%s\n",rankJudge(hand) );
-
-	// hand[0] = generateCard(DIAMOND, 3);
-	// hand[1] = generateCard(DIAMOND, 3);
-	// hand[2] = generateCard(DIAMOND, 1);
-	// hand[3] = generateCard(DIAMOND, 3);
-	// hand[4] = generateCard(DIAMOND, 3);
-	// displayHand(hand);
-	// if ( fourOfAKind(hand)){
-	// 	printf("%s\n", "four of a kind" );
-	// }
-
-
-	// hand[0] = generateCard(DIAMOND, 3);
-	// hand[1] = generateCard(DIAMOND, 3);
-	// hand[2] = generateCard(DIAMOND, 7);
-	// hand[3] = generateCard(DIAMOND, 2);
-	// hand[4] = generateCard(DIAMOND, 3);
-	// displayHand(hand);
-	// if ( flush(hand)){
-	// 	printf("%s\n", "flush" );
-	// }
-	// if( onePair(hand)){
-	// 	printf("%s\n", "onePair");
-	// }
-
-	// // hand[0] = generateCard(DIAMOND, 3);
-	// // hand[1] = generateCard(DIAMOND, 3);
-	// // hand[2] = generateCard(DIAMOND, 7);
-	// // hand[3] = generateCard(DIAMOND, 2);
-	// // hand[4] = generateCard(DIAMOND, 2);
-
-	// displayHand(hand);
-	// if (twoPair(hand)){
-	// 	printf("%s\n", "two pair");
-	// }
 
 }
 

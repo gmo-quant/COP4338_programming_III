@@ -1,7 +1,7 @@
 #include"MainPoker.h"
-#include<stdio.h>
-#include<time.h>
-#include<stdlib.h>
+#include<stdio.h> // used for printf("%s\n", );
+#include<time.h> // used for rand() to create randomNum
+#include<stdlib.h> //
 
 /*-------------------------generateDeck-------------------------------
  *   function: generateDeck(TfDeck deck)
@@ -95,7 +95,9 @@ void swap(Card * cardA, Card * cardB){
 }
 
 
-// for testing purpose when developing Deck.c
+/*
+ for testing purpose when developing Deck.c
+*/
 void DeckTester(){
 	TfDeck deck;
 	generateDeck(deck);
