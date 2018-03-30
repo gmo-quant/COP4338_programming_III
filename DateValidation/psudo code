@@ -1,0 +1,20 @@
+
+
+file = dates.data
+
+read input from a dates.data
+
+output a list of validated and converted dates, along with the contents of the original input file.
+
+
+validateMain
+
+./validateMain < dates.dat #n
+
+read input file dates.dat from stdin
+
+validate the date
+convert the valide dates
+
+generate an output file that contains a list of validated and converted dates
+(default output file name : output.dat)
