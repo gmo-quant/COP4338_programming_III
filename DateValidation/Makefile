@@ -11,7 +11,7 @@ EXE = validateMain
 #EXE += displayMain
 build: $(FILES)
 	$(CC) $(STD) -o $(OUT_EXE) $(FILES) 
-#	$(CC) $(STD) -o $(OUT_EXE_DISPLAY) $(FILES_D)
+	$(CC) $(STD) -o $(OUT_EXE_DISPLAY) $(FILES_D)
 clean:
 	rm -rf *.o core 
 	rm  $(EXE)

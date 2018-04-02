@@ -4,32 +4,23 @@
 
 int main(){
 
-	daysPerMonth day;
-	day = jan;
-	if (jan == 31){
-		printf("%d\n", day.febl );
+	char buffer[BUFFERSIZE];
+	int day;
+	int month;
+	int year;
+
+	while(!feof(stdin)){
+		fgets(buffer, BUFFERSIZE, stdin);
+		fprintf(stdout, "%s\n\n", buffer );
 	}
-	printf("%d ", day);
-	// char buffer[BUFFERSIZE];
-	// while(!feof(stdin)){
-	// 	fgets(buffer, BUFFERSIZE, stdin);
-	// 	if (validDate(buffer)){
-	// 		fprintf(stdout, "read: %s", buffer);
-	// 	}
-	// }
+	fprintf(stdout, "\n" );
 
-
-	// // display original file
-
-
-	// FILE * fp;
-	// fp = fopen(DEFALT_FILE, "r" );
-	// while(!feof(fp)){
-	// 	fgets(buffer, BUFFERSIZE, fp);
-	// 	if (validDate(buffer)){
-	// 		fprintf(stderr, "read: %s", buffer);
-	// 	}
-	// }
-	// fclose(fp);
+	static const char filename[] = "./dates.dat";
+	FILE *fp = fopen(filename, "r");
+	while(!feof(fp)){
+		fgets(buffer, BUFFERSIZE, fp);
+		fprintf(stdout, "%s", buffer );
+	}
+	fprintf(stdout, "\n" );
 	return EXIT_SUCCESS;
 }

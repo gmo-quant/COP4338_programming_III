@@ -4,7 +4,6 @@
 #include<limits.h>
 
 
-
 boolean validFormat(char * date){
 	// date entry with the format of 
 	// mm/dd/yyyy
@@ -17,67 +16,52 @@ boolean validFormat(char * date){
 	}
 }
 
-
-
-
 boolean leapYear(int yy){
 	return (((yy%4==0) && (yy%100!=0)) || (yy%400==0));
 }
 
-
-void convertDate(char * date_str, int* date){
-
-	char day[2];
-	char month[2];
-	char year[4];
-
-	int dd = 0;
-	int mm = 0;
-	int yy = 0;
-
-	month[0] = date_str[0];
-	month[1] =date_str[1];
-	day[0] = date_str[3];
-	day[1] = date_str[4];
-	year[0] = date_str[6];
-	year[1] = date_str[7];
-	year[2] = date_str[8];
-	year[3] = date_str[9];
-
-	date[MONTH] = atoi(month);
-	date[DAY]= atoi(day);			
-	date[YEAR]= atoi(year);
-}
-
-
 boolean validDate(int month, int day, int year){
+	if (year > MAX_VALID_YR || year < INT_MIN){
+		return FALSE;
+	}
+	if( month < JAN || month > DEC ){
+		return FALSE;
+	}
+	if (day < MIN_VALID_DD || day > MAX_VALID_DD ){
+		return FALSE;
+	}
+	// handle February month with leap year
+	if (month == FEB){
+		if (leapYear(year)){
+			return ( day <= (daysPerMonth[FEB]+1) );
+		}else{
+			return ( day <= (daysPerMonth[FEB]) );
+		}
+	}
+	if ( month == APR || month == JUN || month == SEP || month == NOV){
+		return ( day <= daysPerMonth[APR]);
+	}
+	return TRUE;
 
-	
 }
 
-// boolean validDate(int* date){
-// 	if (date[YEAR] > INT_MAX || date[YEAR] < INT_MIN){
-// 		return FALSE;
-// 	}
-// 	if( date[MONTH] < JAN || date[MONTH] > DEC ){
-// 		return FALSE;
-// 	}
-// 	if (date[DAY] < MIN_VALID_DD || date[DAY] > MAX_VALID_DD ){
-// 		return FALSE;
-// 	}
-// 	// handle February month with leap year
-// 	if (date[MONTH] == FEB){
-// 		if (leapYear(date[YEAR])){
-// 			return ( date[DAY] <= (daysPerMonth[FEB]+1) );
-// 		}else{
-// 			return ( date[DAY] <= (daysPerMonth[FEB]) );
-// 		}
-// 	}
-// 	if ( date[MONTH] == APR || date[MONTH] == JUN || date[MONTH] == SEP || date[MONTH] == NOV){
-// 		return ( date[DAY] <= daysPerMonth[APR]);
-// 	}
-// 	return TRUE;
-// }
+void convertDate(){
+
+	char buffer[BUFFERSIZE];
+	int day;
+	int month;
+	int year;
+
+	while(!feof(stdin)){
+		fgets(buffer, BUFFERSIZE, stdin);
+		if (validFormat(buffer)){
+			sscanf(buffer, "%d/%d/%d", &month, &day, &year );
+			if (validDate(month, day, year)){
+				fprintf(stdout, "%d %s %d\n",day,  months[month], year );
+			}
+		}
+	}
+}
 
 
 
