@@ -64,7 +64,8 @@ static int daysPerMonth[] = {0, 31, 28,  31, 30, 31, 30, 31, 31, 30, 31, 30, 31}
 boolean validFormat(char * date);
 
 boolean leapYear(int yy);	// if it is leap year
-boolean validDate(int * date);
+// boolean validDate(int * date);
+boolean validDate(int month, int day, int year);
 void convertDate(char * date_str, int* date);
 
 

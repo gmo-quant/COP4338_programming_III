@@ -49,29 +49,35 @@ void convertDate(char * date_str, int* date){
 	date[YEAR]= atoi(year);
 }
 
-boolean validDate(int* date){
-	if (date[YEAR] > INT_MAX || date[YEAR] < INT_MIN){
-		return FALSE;
-	}
-	if( date[MONTH] < JAN || date[MONTH] > DEC ){
-		return FALSE;
-	}
-	if (date[DAY] < MIN_VALID_DD || date[DAY] > MAX_VALID_DD ){
-		return FALSE;
-	}
-	// handle February month with leap year
-	if (date[MONTH] == FEB){
-		if (leapYear(date[YEAR])){
-			return ( date[DAY] <= (daysPerMonth[FEB]+1) );
-		}else{
-			return ( date[DAY] <= (daysPerMonth[FEB]) );
-		}
-	}
-	if ( date[MONTH] == APR || date[MONTH] == JUN || date[MONTH] == SEP || date[MONTH] == NOV){
-		return ( date[DAY] <= daysPerMonth[APR]);
-	}
-	return TRUE;
+
+boolean validDate(int month, int day, int year){
+
+	
 }
+
+// boolean validDate(int* date){
+// 	if (date[YEAR] > INT_MAX || date[YEAR] < INT_MIN){
+// 		return FALSE;
+// 	}
+// 	if( date[MONTH] < JAN || date[MONTH] > DEC ){
+// 		return FALSE;
+// 	}
+// 	if (date[DAY] < MIN_VALID_DD || date[DAY] > MAX_VALID_DD ){
+// 		return FALSE;
+// 	}
+// 	// handle February month with leap year
+// 	if (date[MONTH] == FEB){
+// 		if (leapYear(date[YEAR])){
+// 			return ( date[DAY] <= (daysPerMonth[FEB]+1) );
+// 		}else{
+// 			return ( date[DAY] <= (daysPerMonth[FEB]) );
+// 		}
+// 	}
+// 	if ( date[MONTH] == APR || date[MONTH] == JUN || date[MONTH] == SEP || date[MONTH] == NOV){
+// 		return ( date[DAY] <= daysPerMonth[APR]);
+// 	}
+// 	return TRUE;
+// }
 
 
 
