@@ -1,6 +1,6 @@
-#include<stdio.h>
+#include<stdio.h> // exit, EXIT_SUCCESS
 #include<stdlib.h>
-#include<string.h>
+#include<string.h> // atoi
 #include"validateDates.h"
 
 /* ===========================================================

@@ -1,7 +1,7 @@
 #include"validateDates.h"
-#include<stdlib.h>
-#include<string.h>
-#include<limits.h>
+#include<stdlib.h> // fprintf(stdout, "%s\n", );
+#include<string.h> // atoi()
+#include<limits.h> // INT_MIN
 
 
 

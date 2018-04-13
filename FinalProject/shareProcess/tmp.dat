@@ -1,0 +1,1305 @@
+Child ID: 17342 starts
+Child ID: 17342 displays shared memory
+Child ID: 17342 displays private unique ID
+Child ID: 17342 updates shared memory
+Child ID: 17342 updates shared memory
+Child ID: 17342 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17349 starts
+Child ID: 17349 displays shared memory
+Child ID: 17349 displays private unique ID
+Child ID: 17349 updates shared memory
+Child ID: 17349 updates shared memory
+Child ID: 17349 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17357 starts
+Child ID: 17357 displays shared memory
+Child ID: 17357 displays private unique ID
+Child ID: 17357 updates shared memory
+Child ID: 17357 updates shared memory
+Child ID: 17357 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17365 starts
+Child ID: 17365 displays shared memory
+Child ID: 17365 displays private unique ID
+Child ID: 17365 updates shared memory
+Child ID: 17365 updates shared memory
+Child ID: 17365 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17398 starts
+Child ID: 17398 displays shared memory
+Child ID: 17398 displays private unique ID
+Child ID: 17398 updates shared memory
+Child ID: 17398 updates shared memory
+Child ID: 17398 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17373 starts
+Child ID: 17373 displays shared memory
+Child ID: 17373 displays private unique ID
+Child ID: 17373 updates shared memory
+Child ID: 17373 updates shared memory
+Child ID: 17373 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17381 starts
+Child ID: 17381 displays shared memory
+Child ID: 17381 displays private unique ID
+Child ID: 17381 updates shared memory
+Child ID: 17381 updates shared memory
+Child ID: 17381 exits with code
+Child ID: 17421 starts
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17421 displays shared memory
+Child ID: 17421 displays private unique ID
+Child ID: 17421 updates shared memory
+Child ID: 17421 updates shared memory
+Child ID: 17421 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17390 starts
+Child ID: 17390 displays shared memory
+Child ID: 17390 displays private unique ID
+Child ID: 17390 updates shared memory
+Child ID: 17390 updates shared memory
+Child ID: 17390 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17406 starts
+Child ID: 17414 starts
+Child ID: 17406 displays shared memory
+Child ID: 17406 displays private unique ID
+Child ID: 17406 updates shared memory
+Child ID: 17406 updates shared memory
+Child ID: 17340 starts
+Child ID: 17406 exits with code
+Child ID: 17414 displays shared memory
+Child ID: 17414 displays private unique ID
+Child ID: 17340 displays shared memory
+Child ID: 17414 updates shared memory
+Child ID: 17340 displays private unique ID
+Child ID: 17414 updates shared memory
+Child ID: 17340 updates shared memory
+Child ID: 17414 exits with code
+Child ID: 17340 updates shared memory
+Child ID: 17340 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17347 starts
+Child ID: 17347 displays shared memory
+Child ID: 17347 displays private unique ID
+Child ID: 17347 updates shared memory
+Child ID: 17347 updates shared memory
+Child ID: 17347 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17355 starts
+Child ID: 17355 displays shared memory
+Child ID: 17355 displays private unique ID
+Child ID: 17355 updates shared memory
+Child ID: 17355 updates shared memory
+Child ID: 17355 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17363 starts
+Child ID: 17363 displays shared memory
+Child ID: 17363 displays private unique ID
+Child ID: 17363 updates shared memory
+Child ID: 17363 updates shared memory
+Child ID: 17363 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17371 starts
+Child ID: 17371 displays shared memory
+Child ID: 17371 displays private unique ID
+Child ID: 17371 updates shared memory
+Child ID: 17371 updates shared memory
+Child ID: 17371 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17379 starts
+Child ID: 17379 displays shared memory
+Child ID: 17379 displays private unique ID
+Child ID: 17379 updates shared memory
+Child ID: 17379 updates shared memory
+Child ID: 17379 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17388 starts
+Child ID: 17341 starts
+Child ID: 17388 displays shared memory
+Child ID: 17388 displays private unique ID
+Child ID: 17341 displays shared memory
+Child ID: 17388 updates shared memory
+Child ID: 17341 displays private unique ID
+Child ID: 17388 updates shared memory
+Child ID: 17341 updates shared memory
+Child ID: 17388 exits with code
+Child ID: 17341 updates shared memory
+Child ID: 17341 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17396 starts
+Child ID: 17396 displays shared memory
+Child ID: 17396 displays private unique ID
+Child ID: 17396 updates shared memory
+Child ID: 17396 updates shared memory
+Child ID: 17396 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17348 starts
+Child ID: 17404 starts
+Child ID: 17348 displays shared memory
+Child ID: 17348 displays private unique ID
+Child ID: 17348 updates shared memory
+Child ID: 17404 displays shared memory
+Child ID: 17348 updates shared memory
+Child ID: 17404 displays private unique ID
+Child ID: 17348 exits with code
+Child ID: 17404 updates shared memory
+Child ID: 17404 updates shared memory
+Child ID: 17404 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17343 starts
+Child ID: 17343 displays shared memory
+Child ID: 17343 displays private unique ID
+Child ID: 17343 updates shared memory
+Child ID: 17343 updates shared memory
+Child ID: 17343 exits with code
+Child ID: 17356 starts
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17356 displays shared memory
+Child ID: 17356 displays private unique ID
+Child ID: 17356 updates shared memory
+Child ID: 17356 updates shared memory
+Child ID: 17356 exits with code
+Child ID: 17344 starts
+Child ID: 17344 displays shared memory
+Child ID: 17344 displays private unique ID
+Child ID: 17344 updates shared memory
+Child ID: 17344 updates shared memory
+Child ID: 17344 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17351 starts
+Child ID: 17345 starts
+Child ID: 17351 displays shared memory
+Child ID: 17351 displays private unique ID
+Child ID: 17351 updates shared memory
+Child ID: 17351 updates shared memory
+Child ID: 17351 exits with code
+Child ID: 17345 displays shared memory
+Child ID: 17345 displays private unique ID
+Child ID: 17345 updates shared memory
+Child ID: 17345 updates shared memory
+Child ID: 17364 starts
+Child ID: 17345 exits with code
+Child ID: 17364 displays shared memory
+Child ID: 17364 displays private unique ID
+Child ID: 17364 updates shared memory
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17364 updates shared memory
+Child ID: 17364 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17352 starts
+Child ID: 17359 starts
+Child ID: 17352 displays shared memory
+Child ID: 17352 displays private unique ID
+Child ID: 17352 updates shared memory
+Child ID: 17352 updates shared memory
+Child ID: 17352 exits with code
+Child ID: 17353 starts
+Child ID: 17359 displays shared memory
+Child ID: 17359 displays private unique ID
+Child ID: 17353 displays shared memory
+Child ID: 17359 updates shared memory
+Child ID: 17353 displays private unique ID
+Child ID: 17359 updates shared memory
+Child ID: 17353 updates shared memory
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17359 exits with code
+Child ID: 17353 updates shared memory
+Child ID: 17353 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17372 starts
+Child ID: 17372 displays shared memory
+Child ID: 17372 displays private unique ID
+Child ID: 17372 updates shared memory
+Child ID: 17372 updates shared memory
+Child ID: 17372 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17412 starts
+Child ID: 17360 starts
+Child ID: 17412 displays shared memory
+Child ID: 17412 displays private unique ID
+Child ID: 17412 updates shared memory
+Child ID: 17360 displays shared memory
+Child ID: 17412 updates shared memory
+Child ID: 17360 displays private unique ID
+Child ID: 17412 exits with code
+Child ID: 17360 updates shared memory
+Child ID: 17360 updates shared memory
+Child ID: 17360 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17367 starts
+Child ID: 17361 starts
+Child ID: 17367 displays shared memory
+Child ID: 17367 displays private unique ID
+Child ID: 17367 updates shared memory
+Child ID: 17367 updates shared memory
+Child ID: 17367 exits with code
+Child ID: 17380 starts
+Child ID: 17361 displays shared memory
+Child ID: 17361 displays private unique ID
+Child ID: 17361 updates shared memory
+Child ID: 17380 displays shared memory
+Child ID: 17361 updates shared memory
+Child ID: 17380 displays private unique ID
+Child ID: 17361 exits with code
+Child ID: 17380 updates shared memory
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17380 updates shared memory
+Child ID: 17380 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17368 starts
+Child ID: 17369 starts
+Child ID: 17368 displays shared memory
+Child ID: 17368 displays private unique ID
+Child ID: 17368 updates shared memory
+Child ID: 17369 displays shared memory
+Child ID: 17369 displays private unique ID
+Child ID: 17369 updates shared memory
+Child ID: 17389 starts
+Child ID: 17369 updates shared memory
+Child ID: 17369 exits with code
+Child ID: 17389 displays shared memory
+Child ID: 17389 displays private unique ID
+Child ID: 17389 updates shared memory
+Child ID: 17389 updates shared memory
+Child ID: 17389 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17375 starts
+Child ID: 17376 starts
+Child ID: 17375 displays shared memory
+Child ID: 17375 displays private unique ID
+Child ID: 17375 updates shared memory
+Child ID: 17375 updates shared memory
+Child ID: 17375 exits with code
+Child ID: 17376 displays shared memory
+Child ID: 17376 displays private unique ID
+Child ID: 17376 updates shared memory
+Child ID: 17376 updates shared memory
+Child ID: 17376 exits with code
+Child ID: 17377 starts
+Child ID: 17377 displays shared memory
+Child ID: 17377 displays private unique ID
+Child ID: 17377 updates shared memory
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17377 updates shared memory
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17377 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17397 starts
+Child ID: 17383 starts
+Child ID: 17397 displays shared memory
+Child ID: 17384 starts
+Child ID: 17397 displays private unique ID
+Child ID: 17383 displays shared memory
+Child ID: 17397 updates shared memory
+Child ID: 17383 displays private unique ID
+Child ID: 17384 displays shared memory
+Child ID: 17397 updates shared memory
+Child ID: 17383 updates shared memory
+Child ID: 17384 displays private unique ID
+Child ID: 17397 exits with code
+Child ID: 17383 updates shared memory
+Child ID: 17384 updates shared memory
+Child ID: 17383 exits with code
+Child ID: 17384 updates shared memory
+Child ID: 17384 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17385 starts
+Child ID: 17405 starts
+Child ID: 17385 displays shared memory
+Child ID: 17385 displays private unique ID
+Child ID: 17385 updates shared memory
+Child ID: 17405 displays shared memory
+Child ID: 17385 updates shared memory
+Child ID: 17405 displays private unique ID
+Child ID: 17385 exits with code
+Child ID: 17405 updates shared memory
+Child ID: 17405 updates shared memory
+Child ID: 17405 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17392 starts
+Child ID: 17393 starts
+Child ID: 17392 displays shared memory
+Child ID: 17392 displays private unique ID
+Child ID: 17392 updates shared memory
+Child ID: 17392 updates shared memory
+Child ID: 17393 displays shared memory
+Child ID: 17393 displays private unique ID
+Child ID: 17393 updates shared memory
+Child ID: 17393 updates shared memory
+Child ID: 17392 exits with code
+Child ID: 17393 exits with code
+Child ID: 17394 starts
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17394 displays shared memory
+Child ID: 17394 displays private unique ID
+Child ID: 17394 updates shared memory
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17394 updates shared memory
+Child ID: 17394 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17400 starts
+Child ID: 17401 starts
+Child ID: 17400 displays shared memory
+Child ID: 17400 displays private unique ID
+Child ID: 17400 updates shared memory
+Child ID: 17401 displays shared memory
+Child ID: 17400 updates shared memory
+Child ID: 17401 displays private unique ID
+Child ID: 17400 exits with code
+Child ID: 17401 updates shared memory
+Child ID: 17401 updates shared memory
+Child ID: 17401 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17402 starts
+Child ID: 17402 displays shared memory
+Child ID: 17402 displays private unique ID
+Child ID: 17402 updates shared memory
+Child ID: 17402 updates shared memory
+Child ID: 17402 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17409 starts
+Child ID: 17409 displays shared memory
+Child ID: 17409 displays private unique ID
+Child ID: 17409 updates shared memory
+Child ID: 17409 updates shared memory
+Child ID: 17409 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17408 starts
+Child ID: 17410 starts
+Child ID: 17408 displays shared memory
+Child ID: 17408 displays private unique ID
+Child ID: 17410 displays shared memory
+Child ID: 17408 updates shared memory
+Child ID: 17410 displays private unique ID
+Child ID: 17408 updates shared memory
+Child ID: 17410 updates shared memory
+Child ID: 17408 exits with code
+Child ID: 17410 updates shared memory
+Child ID: 17410 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17416 starts
+Child ID: 17413 starts
+Child ID: 17416 displays shared memory
+Child ID: 17416 displays private unique ID
+Child ID: 17413 displays shared memory
+Child ID: 17416 updates shared memory
+Child ID: 17413 displays private unique ID
+Child ID: 17416 updates shared memory
+Child ID: 17413 updates shared memory
+Child ID: 17416 exits with code
+Child ID: 17413 updates shared memory
+Child ID: 17413 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17418 starts
+Child ID: 17422 starts
+Child ID: 17418 displays shared memory
+Child ID: 17418 displays private unique ID
+Child ID: 17418 updates shared memory
+Child ID: 17418 updates shared memory
+Child ID: 17418 exits with code
+Child ID: 17350 starts
+Child ID: 17422 displays shared memory
+Child ID: 17422 displays private unique ID
+Child ID: 17350 displays shared memory
+Child ID: 17422 updates shared memory
+Child ID: 17350 displays private unique ID
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17422 updates shared memory
+Child ID: 17350 updates shared memory
+Child ID: 17422 exits with code
+Child ID: 17350 updates shared memory
+Child ID: 17350 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17358 starts
+Child ID: 17358 displays shared memory
+Child ID: 17358 displays private unique ID
+Child ID: 17358 updates shared memory
+Child ID: 17358 updates shared memory
+Child ID: 17358 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17366 starts
+Child ID: 17374 starts
+Child ID: 17366 displays shared memory
+Child ID: 17366 displays private unique ID
+Child ID: 17374 displays shared memory
+Child ID: 17366 updates shared memory
+Child ID: 17374 displays private unique ID
+Child ID: 17366 updates shared memory
+Child ID: 17374 updates shared memory
+Child ID: 17366 exits with code
+Child ID: 17374 updates shared memory
+Child ID: 17374 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17382 starts
+Child ID: 17382 displays shared memory
+Child ID: 17382 displays private unique ID
+Child ID: 17382 updates shared memory
+Child ID: 17382 updates shared memory
+Child ID: 17382 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17391 starts
+Child ID: 17399 starts
+Child ID: 17391 displays shared memory
+Child ID: 17391 displays private unique ID
+Child ID: 17399 displays shared memory
+Child ID: 17391 updates shared memory
+Child ID: 17399 displays private unique ID
+Child ID: 17391 updates shared memory
+Child ID: 17399 updates shared memory
+Child ID: 17391 exits with code
+Child ID: 17399 updates shared memory
+Child ID: 17399 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17407 starts
+Child ID: 17407 displays shared memory
+Child ID: 17407 displays private unique ID
+Child ID: 17407 updates shared memory
+Child ID: 17407 updates shared memory
+Child ID: 17407 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17415 starts
+Child ID: 17346 starts
+Child ID: 17415 displays shared memory
+Child ID: 17415 displays private unique ID
+Child ID: 17346 displays shared memory
+Child ID: 17415 updates shared memory
+Child ID: 17346 displays private unique ID
+Child ID: 17415 updates shared memory
+Child ID: 17346 updates shared memory
+Child ID: 17415 exits with code
+Child ID: 17346 updates shared memory
+Child ID: 17346 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17354 starts
+Child ID: 17354 displays shared memory
+Child ID: 17354 displays private unique ID
+Child ID: 17354 updates shared memory
+Child ID: 17354 updates shared memory
+Child ID: 17354 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17362 starts
+Child ID: 17362 displays shared memory
+Child ID: 17362 displays private unique ID
+Child ID: 17362 updates shared memory
+Child ID: 17362 updates shared memory
+Child ID: 17362 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17370 starts
+Child ID: 17370 displays shared memory
+Child ID: 17370 displays private unique ID
+Child ID: 17370 updates shared memory
+Child ID: 17370 updates shared memory
+Child ID: 17370 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17378 starts
+Child ID: 17378 displays shared memory
+Child ID: 17378 displays private unique ID
+Child ID: 17378 updates shared memory
+Child ID: 17378 updates shared memory
+Child ID: 17378 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17386 starts
+Child ID: 17386 displays shared memory
+Child ID: 17386 displays private unique ID
+Child ID: 17386 updates shared memory
+Child ID: 17386 updates shared memory
+Child ID: 17386 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17387 starts
+Child ID: 17387 displays shared memory
+Child ID: 17387 displays private unique ID
+Child ID: 17387 updates shared memory
+Child ID: 17387 updates shared memory
+Child ID: 17387 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17395 starts
+Child ID: 17395 displays shared memory
+Child ID: 17395 displays private unique ID
+Child ID: 17395 updates shared memory
+Child ID: 17395 updates shared memory
+Child ID: 17395 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17403 starts
+Child ID: 17403 displays shared memory
+Child ID: 17403 displays private unique ID
+Child ID: 17403 updates shared memory
+Child ID: 17403 updates shared memory
+Child ID: 17403 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17411 starts
+Child ID: 17420 starts
+Child ID: 17411 displays shared memory
+Child ID: 17411 displays private unique ID
+Child ID: 17411 updates shared memory
+Child ID: 17411 updates shared memory
+Child ID: 17417 starts
+Child ID: 17411 exits with code
+Child ID: 17420 displays shared memory
+Child ID: 17420 displays private unique ID
+Child ID: 17417 displays shared memory
+Child ID: 17420 updates shared memory
+Child ID: 17417 displays private unique ID
+Child ID: 17420 updates shared memory
+Child ID: 17417 updates shared memory
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17420 exits with code
+Child ID: 17417 updates shared memory
+Child ID: 17417 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+[31mParent:  waits for child: [0m17342
+Child ID: 17423 starts
+[33mparent :  detects child: 17342 completion
+[0mChild ID: 17419 starts
+[31mParent:  waits for child: [0m17340
+[33mparent :  detects child: 17340 completion
+[0m[31mParent:  waits for child: [0m17341
+Child ID: 17428 starts
+[33mparent :  detects child: 17341 completion
+[0mChild ID: 17419 displays shared memory
+Child ID: 17419 displays private unique ID
+[31mParent:  waits for child: [0m17343
+Child ID: 17428 displays shared memory
+Child ID: 17419 updates shared memory
+[33mparent :  detects child: 17343 completion
+[0mChild ID: 17419 updates shared memory
+Child ID: 17428 displays private unique ID
+Child ID: 17419 exits with code
+[31mParent:  waits for child: [0m17344
+Child ID: 17428 updates shared memory
+[33mparent :  detects child: 17344 completion
+[0mChild ID: 17428 updates shared memory
+Child ID: 17428 exits with code
+[31mParent:  waits for child: [0m17345
+[33mparent :  detects child: 17345 completion
+[0m[31mParent:  waits for child: [0m17346
+[33mparent :  detects child: 17346 completion
+[0mParent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+[31mParent:  waits for child: [0m17347
+[33mparent :  detects child: 17347 completion
+[0m[31mParent:  waits for child: [0m17348
+[33mparent :  detects child: 17348 completion
+[0m[31mParent:  waits for child: [0m17349
+Child ID: 17434 starts
+[33mparent :  detects child: 17349 completion
+[0m[31mParent:  waits for child: [0m17351
+Child ID: 17434 displays shared memory
+[33mparent :  detects child: 17351 completion
+[0mChild ID: 17434 displays private unique ID
+Child ID: 17434 updates shared memory
+[31mParent:  waits for child: [0m17352
+Child ID: 17434 updates shared memory
+[33mparent :  detects child: 17352 completion
+[0mChild ID: 17434 exits with code
+[31mParent:  waits for child: [0m17354
+[33mparent :  detects child: 17354 completion
+[0m[31mParent:  waits for child: [0m17355
+[33mparent :  detects child: 17355 completion
+[0mParent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+[31mParent:  waits for child: [0m17357
+[33mparent :  detects child: 17357 completion
+[0m[31mParent:  waits for child: [0m17358
+[33mparent :  detects child: 17358 completion
+[0m[31mParent:  waits for child: [0m17359
+[33mparent :  detects child: 17359 completion
+[0m[31mParent:  waits for child: [0m17360
+[33mparent :  detects child: 17360 completion
+[0mChild ID: 17438 starts
+[31mParent:  waits for child: [0m17361
+[33mparent :  detects child: 17361 completion
+[0m[31mParent:  waits for child: [0m17362
+Child ID: 17433 starts
+[33mparent :  detects child: 17362 completion
+[0mChild ID: 17438 displays shared memory
+Child ID: 17438 displays private unique ID
+[31mParent:  waits for child: [0m17363
+Child ID: 17433 displays shared memory
+Child ID: 17438 updates shared memory
+[33mparent :  detects child: 17363 completion
+[0mChild ID: 17433 displays private unique ID
+Child ID: 17438 updates shared memory
+Child ID: 17433 updates shared memory
+[31mParent:  waits for child: [0m17364
+Child ID: 17438 exits with code
+Child ID: 17433 updates shared memory
+[33mparent :  detects child: 17364 completion
+[0mChild ID: 17433 exits with code
+[31mParent:  waits for child: [0m17365
+[33mparent :  detects child: 17365 completion
+[0m[31mParent:  waits for child: [0m17366
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17427 starts
+Child ID: 17430 starts
+Child ID: 17427 displays shared memory
+Child ID: 17427 displays private unique ID
+Child ID: 17430 displays shared memory
+Child ID: 17430 displays private unique ID
+Child ID: 17430 updates shared memory
+Child ID: 17430 updates shared memory
+Child ID: 17430 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17439 starts
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17439 displays shared memory
+Child ID: 17439 displays private unique ID
+Child ID: 17439 updates shared memory
+Child ID: 17439 updates shared memory
+Child ID: 17439 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17436 starts
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17368 updates shared memory
+Child ID: 17425 starts
+Child ID: 17425 displays shared memory
+Child ID: 17425 displays private unique ID
+Child ID: 17425 updates shared memory
+Child ID: 17425 updates shared memory
+Child ID: 17425 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17431 starts
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17431 displays shared memory
+Child ID: 17431 displays private unique ID
+Child ID: 17431 updates shared memory
+Child ID: 17431 updates shared memory
+Child ID: 17431 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17429 starts
+Child ID: 17429 displays shared memory
+Child ID: 17429 displays private unique ID
+Child ID: 17429 updates shared memory
+Child ID: 17429 updates shared memory
+Child ID: 17429 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17424 starts
+Child ID: 17424 displays shared memory
+Child ID: 17424 displays private unique ID
+Child ID: 17424 updates shared memory
+Child ID: 17424 updates shared memory
+Child ID: 17424 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17435 starts
+Child ID: 17426 starts
+Child ID: 17435 displays shared memory
+Child ID: 17435 displays private unique ID
+Child ID: 17426 displays shared memory
+Child ID: 17435 updates shared memory
+Child ID: 17426 displays private unique ID
+Child ID: 17435 updates shared memory
+Child ID: 17426 updates shared memory
+Child ID: 17435 exits with code
+Child ID: 17426 updates shared memory
+Child ID: 17426 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17432 starts
+Child ID: 17437 starts
+Child ID: 17432 displays shared memory
+Child ID: 17432 displays private unique ID
+Child ID: 17432 updates shared memory
+Child ID: 17432 updates shared memory
+Child ID: 17432 exits with code
+Child ID: 17437 displays shared memory
+Child ID: 17437 displays private unique ID
+Child ID: 17437 updates shared memory
+Child ID: 17437 updates shared memory
+Child ID: 17437 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+Child ID: 17423 displays shared memory
+Child ID: 17423 displays private unique ID
+Child ID: 17423 updates shared memory
+Child ID: 17423 updates shared memory
+Child ID: 17423 exits with code
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+[33mparent :  detects child: 17366 completion
+[0mParent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+[31mParent:  waits for child: [0m17350
+[33mparent :  detects child: 17350 completion
+[0m[31mParent:  waits for child: [0m17353
+[33mparent :  detects child: 17353 completion
+[0m[31mParent:  waits for child: [0m17356
+[33mparent :  detects child: 17356 completion
+[0m[31mParent:  waits for child: [0m17367
+Child ID: 17427 updates shared memory
+[33mparent :  detects child: 17367 completion
+[0m[31mParent:  waits for child: [0m17369
+[33mparent :  detects child: 17369 completion
+[0mChild ID: 17436 displays shared memory
+Child ID: 17427 updates shared memory
+[31mParent:  waits for child: [0m17370
+Child ID: 17427 exits with code
+Child ID: 17436 displays private unique ID
+[33mparent :  detects child: 17370 completion
+[0mChild ID: 17436 updates shared memory
+Child ID: 17436 updates shared memory
+[31mParent:  waits for child: [0m17371
+Child ID: 17436 exits with code
+[33mparent :  detects child: 17371 completion
+[0m[31mParent:  waits for child: [0m17372
+[33mparent :  detects child: 17372 completion
+[0mParent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+[31mParent:  waits for child: [0m17373
+[33mparent :  detects child: 17373 completion
+[0mParent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+[31mParent:  waits for child: [0m17374
+[33mparent :  detects child: 17374 completion
+[0m[31mParent:  waits for child: [0m17375
+[33mparent :  detects child: 17375 completion
+[0mChild ID: 17368 exits with code
+[31mParent:  waits for child: [0m17376
+[33mparent :  detects child: 17376 completion
+[0m[31mParent:  waits for child: [0m17377
+[33mparent :  detects child: 17377 completion
+[0m[31mParent:  waits for child: [0m17378
+Parent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process
+[33mparent :  detects child: 17378 completion
+[0m[31mParent:  waits for child: [0m17379
+[33mparent :  detects child: 17379 completion
+[0m[31mParent:  waits for child: [0m17380
+[33mparent :  detects child: 17380 completion
+[0m[31mParent:  waits for child: [0m17381
+[33mparent :  detects child: 17381 completion
+[0m[31mParent:  waits for child: [0m17382
+[33mparent :  detects child: 17382 completion
+[0m[31mParent:  waits for child: [0m17383
+[33mparent :  detects child: 17383 completion
+[0m[31mParent:  waits for child: [0m17384
+[33mparent :  detects child: 17384 completion
+[0m[31mParent:  waits for child: [0m17368
+[33mparent :  detects child: 17368 completion
+[0m[31mParent:  waits for child: [0m17385
+[33mparent :  detects child: 17385 completion
+[0m[31mParent:  waits for child: [0m17386
+[33mparent :  detects child: 17386 completion
+[0m[31mParent:  waits for child: [0m17387
+[33mparent :  detects child: 17387 completion
+[0m[31mParent:  waits for child: [0m17388
+[33mparent :  detects child: 17388 completion
+[0m[31mParent:  waits for child: [0m17389
+[33mparent :  detects child: 17389 completion
+[0m[31mParent:  waits for child: [0m17390
+[33mparent :  detects child: 17390 completion
+[0m[31mParent:  waits for child: [0m17391
+[33mparent :  detects child: 17391 completion
+[0m[31mParent:  waits for child: [0m17392
+[33mparent :  detects child: 17392 completion
+[0m[31mParent:  waits for child: [0m17393
+[33mparent :  detects child: 17393 completion
+[0m[31mParent:  waits for child: [0m17394
+[33mparent :  detects child: 17394 completion
+[0m[31mParent:  waits for child: [0m17395
+[33mparent :  detects child: 17395 completion
+[0m[31mParent:  waits for child: [0m17396
+[33mparent :  detects child: 17396 completion
+[0m[31mParent:  waits for child: [0m17397
+[33mparent :  detects child: 17397 completion
+[0m[31mParent:  waits for child: [0m17398
+[33mparent :  detects child: 17398 completion
+[0m[31mParent:  waits for child: [0m17399
+[33mparent :  detects child: 17399 completion
+[0m[31mParent:  waits for child: [0m17400
+[33mparent :  detects child: 17400 completion
+[0m[31mParent:  waits for child: [0m17401
+[33mparent :  detects child: 17401 completion
+[0m[31mParent:  waits for child: [0m17402
+[33mparent :  detects child: 17402 completion
+[0m[31mParent:  waits for child: [0m17403
+[33mparent :  detects child: 17403 completion
+[0m[31mParent:  waits for child: [0m17404
+[33mparent :  detects child: 17404 completion
+[0m[31mParent:  waits for child: [0m17405
+[33mparent :  detects child: 17405 completion
+[0m[31mParent:  waits for child: [0m17406
+[33mparent :  detects child: 17406 completion
+[0m[31mParent:  waits for child: [0m17407
+[33mparent :  detects child: 17407 completion
+[0m[31mParent:  waits for child: [0m17408
+[33mparent :  detects child: 17408 completion
+[0m[31mParent:  waits for child: [0m17409
+[33mparent :  detects child: 17409 completion
+[0m[31mParent:  waits for child: [0m17410
+[33mparent :  detects child: 17410 completion
+[0m[31mParent:  waits for child: [0m17411
+[33mparent :  detects child: 17411 completion
+[0m[31mParent:  waits for child: [0m17412
+[33mparent :  detects child: 17412 completion
+[0m[31mParent:  waits for child: [0m17413
+[33mparent :  detects child: 17413 completion
+[0m[31mParent:  waits for child: [0m17414
+[33mparent :  detects child: 17414 completion
+[0m[31mParent:  waits for child: [0m17415
+[33mparent :  detects child: 17415 completion
+[0m[31mParent:  waits for child: [0m17416
+[33mparent :  detects child: 17416 completion
+[0m[31mParent:  waits for child: [0m17417
+[33mparent :  detects child: 17417 completion
+[0m[31mParent:  waits for child: [0m17418
+[33mparent :  detects child: 17418 completion
+[0m[31mParent:  waits for child: [0m17419
+[33mparent :  detects child: 17419 completion
+[0m[31mParent:  waits for child: [0m17420
+[33mparent :  detects child: 17420 completion
+[0m[31mParent:  waits for child: [0m17421
+[33mparent :  detects child: 17421 completion
+[0m[31mParent:  waits for child: [0m17422
+[33mparent :  detects child: 17422 completion
+[0m[31mParent:  waits for child: [0m17424
+[33mparent :  detects child: 17424 completion
+[0m[31mParent:  waits for child: [0m17425
+[33mparent :  detects child: 17425 completion
+[0m[31mParent:  waits for child: [0m17426
+[33mparent :  detects child: 17426 completion
+[0m[31mParent:  waits for child: [0m17427
+[33mparent :  detects child: 17427 completion
+[0m[31mParent:  waits for child: [0m17428
+[33mparent :  detects child: 17428 completion
+[0m[31mParent:  waits for child: [0m17429
+[33mparent :  detects child: 17429 completion
+[0m[31mParent:  waits for child: [0m17430
+[33mparent :  detects child: 17430 completion
+[0m[31mParent:  waits for child: [0m17431
+[33mparent :  detects child: 17431 completion
+[0m[31mParent:  waits for child: [0m17432
+[33mparent :  detects child: 17432 completion
+[0m[31mParent:  waits for child: [0m17433
+[33mparent :  detects child: 17433 completion
+[0m[31mParent:  waits for child: [0m17434
+[33mparent :  detects child: 17434 completion
+[0m[31mParent:  waits for child: [0m17436
+[33mparent :  detects child: 17436 completion
+[0m[31mParent:  waits for child: [0m17437
+[33mparent :  detects child: 17437 completion
+[0m[31mParent:  waits for child: [0m17438
+[33mparent :  detects child: 17438 completion
+[0m[31mParent:  waits for child: [0m17439
+[33mparent :  detects child: 17439 completion
+[0m[31mParent:  waits for child: [0m17423
+[33mparent :  detects child: 17423 completion
+[0m[31mParent:  waits for child: [0m17435
+[33mparent :  detects child: 17435 completion
+[0mParent: starts
+Parent: validate command line
+./sharedProcess
+2
+Parent: forks (each) child process

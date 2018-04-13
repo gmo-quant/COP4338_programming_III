@@ -1,6 +1,6 @@
 
 
-file = dates.data
+file = dates.dat
 
 read input from a dates.data
 

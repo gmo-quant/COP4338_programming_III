@@ -1,5 +1,5 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include<stdio.h> //EXIT_SUCCESS
+#include<stdlib.h> // fprintf(stdout, "%s\n", );
 #include"validateDates.h"
 /* ===========================================================
 |
