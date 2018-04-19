@@ -1,0 +1,22 @@
+
+pseduocode:
+
+|	request shared memory for these integers, 
+|	attach the shared memory to its own address space  
+|	fill the space (using an array )with the integers from the cmd
+|	the parent will display the initial state of the shared memory
+|	spawn a number of child processes equal to the number of cmd arguments,
+|	all at once, the parent wait for each and every child to complete its tasks.
+|	upon completion of all children, the parent will acknowledge said completion
+|	display therir respective exit codes.
+|	display the final state of the shared memory, 
+|	detach the shared memory
+|	remove the shared memory
+|	terminate
+| 	each child process will receive a unique ID upon initiation - an integer between and 
+|		the number of cmd arguments (maximum 7).
+|	each child will dispaly the initial state of the shared memory and their pirvate memory,
+|	each child will locate the array element (index) associated with their unique ID 
+|	multiply that array element by their unique ID, storing the reslut in the same array element, 
+| 	each child will then display the current state of the shared memory, provide their exit
+|		code/status, and exit.

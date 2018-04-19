@@ -5,4 +5,4 @@ sharedProcess:
 	$(CC) $(STD) -D_SVID_SOURCE -o sharedProcess sharedProcess.c sharedProcessLib.c 
 
 clean:
-	rm sharedProcess
+	rm sharedProcess 
